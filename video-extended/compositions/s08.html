@@ -1,0 +1,57 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s08-tab { left: 120px; top: 130px; width: 1180px; height: 700px; }
+    #s08-h { position: absolute; left: 30px; top: 22px; font-family: var(--mono); font-size: 32px; font-weight: 600; }
+    #s08-h span { color: var(--grey); font-weight: 400; }
+    #s08-stage .r { position: absolute; left: 30px; width: 1120px; height: 56px; display: flex; align-items: center; border-top: 1px solid var(--line); font-size: 34px; }
+    #s08-stage .r .k { width: 330px; font-family: var(--mono); font-weight: 600; }
+    #s08-stage .r .s { width: 330px; font-family: var(--mono); color: var(--grey); }
+    #s08-stage .r .m { color: var(--ink); }
+    #s08-lab { left: 1330px; top: 130px; width: 494px; height: 330px; padding: 24px 28px; }
+    #s08-lab .t { font-family: var(--mono); font-size: 30px; font-weight: 600; margin-bottom: 14px; }
+    #s08-lab .l { font-family: var(--mono); font-size: 28px; line-height: 1.55; }
+    #s08-lab .l b { color: var(--green); font-weight: 600; }
+    #s08-rep { left: 1330px; top: 500px; font-size: 32px; flex-direction: column; align-items: flex-start; gap: 4px; }
+    #s08-rep .mono { font-size: 28px; }
+  </style>
+  <div id="root" data-composition-id="s08" data-width="1920" data-height="1080">
+    <div class="stage" id="s08-stage">
+      <div class="chapter">Inside an episode</div>
+      <div class="simchip" id="s08-sim">glove input: simulated</div>
+      <div class="panel" id="s08-tab"><div id="s08-h">episode_0000.npz <span>· 10 arrays · 1032 steps</span></div></div>
+      <div class="panel" id="s08-lab"><div class="t">episodes.jsonl</div><div class="l">"outcome": <b>"lifted"</b><br />"max_lift_m": 0.1102<br />"peak_force_n": 3.763<br />"crack_force_n": 8.0<br />+ keyframe PNGs</div></div>
+      <div class="abs chip green" id="s08-rep"><span>replay from action + wrist_target</span><span class="mono">teleop replay: same label 4 / 4</span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s08";
+      const $ = (id) => document.getElementById(id);
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s08-stage", S);
+      V.header(document.querySelector("#s08-stage"), tl);
+      const rows = [
+        ["t", "time in seconds", "time"], ["glove", "raw glove frames", "raw glove"], ["human_angles", "human angles", "human angles"],
+        ["action", "Shadow actuator targets", "actions"], ["wrist_target", "wrist target pose", "wrist target"], ["inspire", "Inspire commands", "Inspire commands"],
+        ["qpos", "joint positions", "joint positions"], ["root_pose", "hand pose", "hand pose"], ["egg_pose", "egg pose", "egg pose"], ["egg_force", "egg contact force", "egg force"],
+      ];
+      V.enter(tl, "#s08-tab", 0.2, { y: 0 });
+      V.enter(tl, "#s08-sim", 0.3);
+      const els = {};
+      rows.forEach(([k, m, say], i) => {
+        const r = V.el("div", "r", $("s08-tab"));
+        r.style.top = 92 + i * 58 + "px";
+        V.el("div", "k", r, k); V.el("div", "s", r, "(" + V.data.shapes[k].join(", ") + ")"); V.el("div", "m", r, m);
+        els[k] = r;
+        tl.fromTo(r, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, V.t(S, say));
+      });
+      V.enter(tl, "#s08-lab", V.t(S, "ten arrays"));
+      const tR = V.t(S, "The actions and");
+      tl.to([els.action.querySelector(".k"), els.wrist_target.querySelector(".k")], { color: "#FFFFFF", duration: 0.4 }, tR);
+      tl.to([els.action, els.wrist_target], { backgroundColor: "rgba(255,255,255,0.08)", duration: 0.4 }, tR);
+      V.enter(tl, "#s08-rep", V.t(S, "replay it"));
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

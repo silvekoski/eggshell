@@ -1,0 +1,17 @@
+{
+  "name": "explainer-video",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A narrated explainer video, built with HyperFrames and GSAP",
+  "scripts": {
+    "lint": "hyperframes lint",
+    "preview": "hyperframes preview",
+    "render": "hyperframes render"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "gsap": "3.15.0",
+    "hyperframes": "0.9.43"
+  }
+}

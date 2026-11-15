@@ -1,0 +1,42 @@
+{
+  "source": "https://teenage.engineering",
+  "measured": "2026-11-15",
+  "title": "teenage engineering",
+  "url": "teenage.engineering",
+  "dark": true,
+  "colors": {
+    "bg": "#767676",
+    "panel": "#0B0B0B",
+    "panel2": "#161616",
+    "line": "#2A2A2A",
+    "line2": "#9A9A9A",
+    "text": "#FFFFFF",
+    "sub": "#DADADA",
+    "dim": "#AFAFAF",
+    "accent": "#FF5A1F",
+    "red": "#FF1A0D",
+    "good": "#FFFFFF",
+    "amber": "#FF5A1F"
+  },
+  "fonts": {
+    "display": "te-20, Unicode, sans-serif",
+    "text": "te-20, Unicode, sans-serif",
+    "faces": [
+      {
+        "family": "te-20",
+        "file": "fonts/te-20-0.woff2",
+        "weight": "100",
+        "style": "normal"
+      },
+      {
+        "family": "te-20",
+        "file": "fonts/te-20-1.woff2",
+        "weight": "300",
+        "style": "normal"
+      }
+    ]
+  },
+  "glow": 0,
+  "radius": 36,
+  "note": "Measured from teenage.engineering (dark), hand-edited towards the TE TX-6 page: mid-grey page, black hardware panel, orange knobs, red pill."
+}

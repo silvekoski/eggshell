@@ -1,0 +1,122 @@
+{
+ "wav": "scene03.wav",
+ "ratio": 0.8,
+ "mismatch": [
+  {
+   "script": "eleven centimetres,",
+   "heard": "11 centimeters"
+  },
+  {
+   "script": "point seven six",
+   "heard": ".76"
+  }
+ ],
+ "words": [
+  {
+   "w": "A",
+   "s": 0.0,
+   "e": 0.16
+  },
+  {
+   "w": "careful",
+   "s": 0.16,
+   "e": 0.5
+  },
+  {
+   "w": "try.",
+   "s": 0.5,
+   "e": 0.92
+  },
+  {
+   "w": "The",
+   "s": 1.6,
+   "e": 1.72
+  },
+  {
+   "w": "hand",
+   "s": 1.72,
+   "e": 2.04
+  },
+  {
+   "w": "lifts",
+   "s": 2.04,
+   "e": 2.4
+  },
+  {
+   "w": "the",
+   "s": 2.4,
+   "e": 2.58
+  },
+  {
+   "w": "egg",
+   "s": 2.58,
+   "e": 2.84
+  },
+  {
+   "w": "eleven",
+   "s": 2.84,
+   "e": 3.28
+  },
+  {
+   "w": "centimetres,",
+   "s": 3.28,
+   "e": 3.72
+  },
+  {
+   "w": "at",
+   "s": 3.72,
+   "e": 4.46
+  },
+  {
+   "w": "a",
+   "s": 4.46,
+   "e": 4.6
+  },
+  {
+   "w": "peak",
+   "s": 4.6,
+   "e": 4.86
+  },
+  {
+   "w": "grip",
+   "s": 4.86,
+   "e": 5.14
+  },
+  {
+   "w": "force",
+   "s": 5.14,
+   "e": 5.46
+  },
+  {
+   "w": "of",
+   "s": 5.46,
+   "e": 5.66
+  },
+  {
+   "w": "three",
+   "s": 5.66,
+   "e": 5.96
+  },
+  {
+   "w": "point",
+   "s": 5.96,
+   "e": 6.267
+  },
+  {
+   "w": "seven",
+   "s": 6.267,
+   "e": 6.573
+  },
+  {
+   "w": "six",
+   "s": 6.573,
+   "e": 6.88
+  },
+  {
+   "w": "newtons.",
+   "s": 6.88,
+   "e": 7.34
+  }
+ ],
+ "heard": "A careful try. The hand lifts the egg 11 centimeters at a peak grip force of 3 .76 Newtons."
+}

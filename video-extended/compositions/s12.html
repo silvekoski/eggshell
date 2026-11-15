@@ -1,0 +1,50 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s12-stage .hd { position: absolute; top: 110px; font-size: 56px; font-weight: 600; }
+    #s12-stage .it { position: absolute; width: 840px; height: 110px; padding: 0 24px; display: flex; align-items: center; gap: 22px; }
+    #s12-stage .it .ic { width: 52px; height: 52px; flex: none; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    #s12-stage .it .t { font-size: 40px; font-weight: 600; line-height: 1.1; }
+    #s12-stage .it .d { font-size: 30px; color: var(--grey); margin-top: 4px; }
+    #s12-stage .ok .ic { border: 3px solid var(--green); }
+    #s12-stage .hw { border-style: dashed !important; }
+    #s12-stage .hw .ic { border: 3px dashed #9A9A9A; }
+    #s12-proxy { left: 120px; top: 760px; font-size: 32px; }
+  </style>
+  <div id="root" data-composition-id="s12" data-width="1920" data-height="1080">
+    <div class="stage" id="s12-stage">
+      <div class="chapter">Verified, and not yet</div>
+      <div class="hd c-green" id="s12-h1" style="left: 120px">verified, with no gloves</div>
+      <div class="hd c-grey" id="s12-h2" style="left: 984px">needs hardware</div>
+      <div class="abs chip grey" id="s12-proxy">crack threshold 8 N: a simulation proxy, not a measured egg</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s12";
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s12-stage", S);
+      V.header(document.querySelector("#s12-stage"), tl);
+      const stage = document.querySelector("#s12-stage");
+      const ok = [["wire format", "matches Rokoko's bridge code", "wire format"], ["angle maths", "exact round trip, 200 random poses", "angle maths"],
+        ["MuJoCo Shadow hand", "ranges, signs and pinch checked", "MuJoCo hand"], ["labels and replay", "4 of 4 labels reproduce", "labels and replay"]];
+      const hw = [["real Smartglove data", "thumb offsets, noise, wrist position", "real Smartglove"], ["ROS 2 path", "written, not run", "ROS 2 path"],
+        ["live viewer window", "no display on our build machine", "live viewer"], ["real Inspire hand", "direction and range not checked", "real Inspire"]];
+      const add = (list, x, cls) => list.forEach(([t, d, say], i) => {
+        const it = V.el("div", "panel it " + cls, stage); it.style.left = x + "px"; it.style.top = 210 + i * 124 + "px";
+        const ic = V.el("div", "ic", it);
+        const box = V.el("div", "", it); V.el("div", "t", box, t); V.el("div", "d", box, d);
+        V.enter(tl, it, V.t(S, say));
+        if (cls === "ok") {
+          const s = V.svg("svg", { viewBox: "0 0 52 52", width: 46, height: 46 }, ic);
+          const p = V.svg("path", { d: "M12 27 L22 37 L40 16", fill: "none", stroke: "#FFFFFF", "stroke-width": 6, "stroke-linecap": "round", "stroke-linejoin": "round" }, s);
+          V.draw(tl, p, V.t(S, say) + 0.25, 0.3, "power2.out");
+        }
+      });
+      V.enter(tl, "#s12-h1", 0.2); V.enter(tl, "#s12-h2", 0.35);
+      add(ok, 96, "ok"); add(hw, 984, "hw");
+      V.enter(tl, "#s12-proxy", V.t(S, "crack threshold"));
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

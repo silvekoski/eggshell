@@ -1,0 +1,37 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s03-R { opacity: 0.4; }
+  </style>
+  <div id="root" data-composition-id="s03" data-width="1920" data-height="1080">
+    <div class="stage" id="s03-stage">
+      <div class="panel pp" id="s03-L" style="left: 120px">
+        <div class="pl">careful · episode 0</div>
+        <div class="screen"><img src="assets/data/hd-egg-at-3.9.jpg" alt="" />
+          <video data-hf-media-start-basis="local" id="s03-vid" class="clip" src="assets/footage/egg.mp4" muted playsinline data-start="0" data-duration="8.1" data-media-start="3.9"></video></div>
+        <div class="pn" id="s03-n0"><span class="led"></span><span class="n">3.76 N</span><span class="w">lifted</span></div>
+      </div>
+      <div class="panel pp" id="s03-R" style="left: 984px">
+        <div class="pl">squeeze · episode 1</div>
+        <div class="screen"><img src="assets/data/hd-crush-at-0.65.jpg" alt="" /></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s03";
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s03-stage", S, { noOut: true });
+      const stage = document.querySelector("#s03-stage");
+      V.header(stage, tl);
+      const L = document.querySelector("#s03-L"), R = document.querySelector("#s03-R");
+      const D = V.data.footage.egg;
+      const h = V.hud(L, D, { left: 640, top: 70, height: 372, lift: true, gap: 85 });
+      V.syncFootage(tl, D, 0, 3.9, 8.1, h.update);
+      const h2 = V.hud(R, V.data.footage.crush, { left: 640, top: 70, height: 372, lift: false, gap: 85 });
+      h2.update(Math.round(0.65 * 30));
+      V.enter(tl, "#s03-n0", V.t(S, "peak grip force"));
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

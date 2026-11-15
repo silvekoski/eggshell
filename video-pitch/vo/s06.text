@@ -1,0 +1,1 @@
+Labels make the data trainable. We trained a policy on four hundred eighty demos, then added the lifted task vector to its weights, with no new training. Lifts rose from twenty-seven to sixty-seven percent. Subtracting the crushed vector failed: it broke the reach.

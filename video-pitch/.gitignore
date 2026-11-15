@@ -1,0 +1,5 @@
+node_modules/
+out/
+# Screen recordings are large and rebuilt by rec/record.mjs.
+public/rec/
+.env

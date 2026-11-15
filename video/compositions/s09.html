@@ -1,0 +1,36 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s09-wm { top: 84px; }
+    #s09-p { left: 120px; top: 236px; width: 1680px; height: 650px; }
+    #s09-scr { left: 28px; top: 28px; width: 1056px; height: 594px; }
+    #s09-tag { left: 1124px; top: 44px; width: 520px; font-size: 56px; font-weight: 200; letter-spacing: -0.02em; line-height: 1.08; text-transform: lowercase; }
+    #s09-credit { left: 1124px; top: 400px; width: 530px; font-size: 22px; line-height: 1.5; color: #D2D2D2; text-transform: lowercase; }
+  </style>
+  <div id="root" data-composition-id="s09" data-width="1920" data-height="1080">
+    <div class="stage" id="s09-stage">
+      <div class="wordmark" id="s09-wm">egg shell</div>
+      <div class="panel" id="s09-p">
+        <div class="screen" id="s09-scr"><img src="assets/data/hd-egg-at-7.0.jpg" alt="" />
+          <video data-hf-media-start-basis="local" id="s09-vid" class="clip" src="assets/footage/egg.mp4" muted playsinline data-start="0" data-duration="4.4" data-media-start="7.0"></video></div>
+        <div class="abs" id="s09-tag">the robot feels what you can't.</div>
+        <div class="abs" id="s09-credit">shadow hand model: mujoco menagerie (apache-2.0)<br />episode review: nvidia nemotron 3.5 super vl<br />all footage: mujoco simulation<br />glove input: a scripted operator</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s09";
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s09-stage", S, { noOut: true });
+      const $ = (id) => document.getElementById(id);
+      V.header($("s09-stage"), tl);
+      V.orangeRow($("s09-p"), 1150, 590, 5, 18, 56);
+      V.enter(tl, "#s09-wm", V.t(S, "Egg Shell"), { y: 16 });
+      V.enter(tl, "#s09-tag", V.t(S, "The robot feels"));
+      V.enter(tl, "#s09-credit", V.t(S, "can't", 0, "e") + 0.4, { y: 0 });
+      tl.to("#s09-stage", { opacity: 0, duration: 0.5 }, V.dur(S) - 0.5);
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

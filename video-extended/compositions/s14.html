@@ -1,0 +1,76 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s14-title { left: 120px; top: 110px; }
+    #s14-p { left: 120px; top: 250px; width: 1680px; height: 630px; }
+    #s14-stage .col { position: absolute; top: 0; width: 560px; height: 630px; padding: 40px 44px 0 44px; }
+    #s14-stage .col .no { font-size: 26px; color: #BDBDBD; }
+    #s14-stage .col .t { font-size: 50px; font-weight: 200; letter-spacing: -0.02em; line-height: 1.05; margin-top: 14px; text-transform: lowercase; }
+    #s14-stage .col .d { font-size: 30px; color: #D2D2D2; line-height: 1.25; margin-top: 14px; text-transform: lowercase; }
+    #s14-stage .col .tag { position: absolute; left: 44px; top: 560px; font-size: 24px; color: #D2D2D2; text-transform: lowercase; display: flex; align-items: center; gap: 12px; }
+    #s14-fd { position: absolute; left: 44px; top: 270px; width: 470px; height: 270px; }
+    #s14-fd .fl2 { position: absolute; top: 244px; width: 60px; text-align: center; font-size: 22px; transform: translateX(-50%); }
+    #s14-eps { position: absolute; left: 44px; top: 290px; display: grid; grid-template-columns: 226px 226px; gap: 14px; }
+    #s14-eps .t2 { width: 226px; height: 127px; border-radius: 12px; overflow: hidden; position: relative; outline: 2px solid rgba(255,255,255,0.8); }
+    #s14-eps .t2 img { width: 226px; height: 127px; object-fit: cover; display: block; }
+    #s14-eps .t2 .led { position: absolute; right: 8px; top: 8px; width: 20px; height: 20px; }
+    #s14-glove { position: absolute; left: 44px; top: 300px; width: 470px; height: 170px; }
+  </style>
+  <div id="root" data-composition-id="s14" data-width="1920" data-height="1080">
+    <div class="stage" id="s14-stage">
+      <div class="abs headline" id="s14-title">next</div>
+      <div class="panel" id="s14-p">
+        <div class="hair" id="s14-v1" style="left: 560px; top: 44px; width: 2px; height: 542px"></div>
+        <div class="hair" id="s14-v2" style="left: 1120px; top: 44px; width: 2px; height: 542px"></div>
+        <div class="col" id="s14-c1" style="left: 0px"><div class="no">01</div><div class="t">real rokoko gloves</div><div class="d">at the venue, in place of the scripted operator</div>
+          <svg id="s14-glove" viewBox="0 0 470 170" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M60 160 L60 95 C60 84 74 84 74 95 L74 40 C74 29 89 29 89 40 L89 88 L89 28 C89 17 104 17 104 28 L104 88 L104 34 C104 23 119 23 119 34 L119 90 L119 50 C119 39 134 39 134 50 L134 116 C134 140 119 160 98 160 Z" />
+            <path d="M60 108 L39 82 C32 74 21 82 26 92 L60 144" />
+            <path d="M190 95 L290 95 M272 79 L290 95 L272 111" />
+            <text x="312" y="105" fill="#FFFFFF" stroke="none" font-family="VID Inter" font-weight="300" font-size="28">:12277</text>
+          </svg>
+          <div class="tag">replaces the scripted operator</div></div>
+        <div class="col" id="s14-c2" style="left: 560px"><div class="no">02</div><div class="t">inspire hand</div><div class="d">per finger, 0 to 1000</div>
+          <div id="s14-fd"></div><div class="tag">computed · not sent yet</div></div>
+        <div class="col" id="s14-c3" style="left: 1120px"><div class="no">03</div><div class="t">behaviour cloning</div><div class="d">trained on clean episodes only</div>
+          <div id="s14-eps">
+            <div class="t2 keep"><img src="assets/data/hd-egg-at-7.0.jpg" alt="" /><span class="led"></span></div>
+            <div class="t2"><img src="assets/data/hd-crush-last.jpg" alt="" /><span class="led red"></span></div>
+            <div class="t2"><img src="assets/data/hd-drop-last.jpg" alt="" /><span class="led"></span></div>
+            <div class="t2"><img src="assets/data/hd-miss-last.jpg" alt="" /><span class="led grey"></span></div>
+          </div><div class="tag">plan, not built yet</div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s14";
+      const $ = (id) => document.getElementById(id);
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s14-stage", S);
+      V.header($("s14-stage"), tl);
+      V.enter(tl, "#s14-title", 0.2);
+      tl.fromTo(["#s14-v1", "#s14-v2"], { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.6, ease: "power2.inOut" }, 0.4);
+      V.enter(tl, "#s14-c1", 0.3);
+      V.enter(tl, "#s14-c2", V.t(S, "Inspire hand") - 0.2);
+      V.enter(tl, "#s14-c3", V.t(S, "behaviour-cloning") - 0.2);
+      // six faders: the Inspire commands of episode 0 (little, ring, middle, index, thumb bend, thumb rotation)
+      const E = V.data.egg, fd = $("s14-fd"), names = ["l", "r", "m", "i", "tb", "tr"], caps = [];
+      names.forEach((n, j) => {
+        const x = 30 + j * 80;
+        const f = V.el("div", "fader", fd);
+        Object.assign(f.style, { left: (x - 40) + "px", top: "0px", width: "80px", height: "230px" });
+        V.el("div", "slot", f);
+        caps.push(V.el("div", "cap", f));
+        const l = V.el("div", "fl2", fd, n); l.style.left = x + "px";
+      });
+      const t0 = V.t(S, "Inspire hand"), t1 = V.dur(S) - 0.3;
+      const o = { k: 0 };
+      const show = () => { const k = Math.min(E.inspire.length - 1, Math.round(o.k)); caps.forEach((c, j) => { c.style.top = (217 - 204 * E.inspire[k][j] / 1000) + "px"; }); };
+      show();
+      tl.fromTo(o, { k: 0 }, { k: E.inspire.length - 1, duration: t1 - t0, ease: "none", onUpdate: show }, t0);
+      tl.to("#s14-eps .t2:not(.keep)", { opacity: 0.3, duration: 0.5 }, V.t(S, "clean episodes"));
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

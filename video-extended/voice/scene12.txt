@@ -1,0 +1,1 @@
+What is verified, and what is not. Verified with no gloves: the wire format against Rokoko's bridge code, the angle maths, the MuJoCo hand, labels and replay. Still needs hardware: real Smartglove data, the ROS 2 path, the live viewer, and a real Inspire hand. And the crack threshold stays a proxy.

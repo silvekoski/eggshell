@@ -1,0 +1,98 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s13-title { left: 120px; top: 110px; font-size: 76px; white-space: nowrap; }
+    #s13-data { left: 120px; top: 214px; }
+    #s13-eq { left: 120px; top: 300px; font-family: var(--mono); font-size: 60px; line-height: 84px; color: #FFF; white-space: nowrap; }
+    #s13-eq sub { font-size: 30px; vertical-align: baseline; position: relative; top: 10px; margin-left: 2px; }
+    #s13-eq .k { display: inline-block; min-width: 40px; }
+    #s13-knobs { left: 120px; top: 590px; width: 700px; height: 180px; }
+    #s13-knobs .kl { position: absolute; font-size: 40px; font-weight: 300; }
+    #s13-knobs .kv { position: absolute; font-size: 56px; font-weight: 200; letter-spacing: -0.03em; }
+    #s13-stage .col { position: absolute; top: 300px; width: 300px; height: 310px; padding: 22px 0 0 28px; }
+    #s13-stage .col .lab { font-size: 26px; color: #FFF; white-space: nowrap; }
+    #s13-stage .col .lab sub { font-size: 18px; vertical-align: baseline; position: relative; top: 6px; }
+    #s13-stage .col .bn { white-space: nowrap; font-size: 116px; letter-spacing: -0.04em; line-height: 1; margin-top: 34px; }
+    #s13-stage .col .bl { font-size: 24px; margin-top: 18px; color: #FFF; }
+    #s13-stage .col .bs { font-size: 24px; margin-top: 8px; color: #FFFFFF; }
+    #s13-blue { left: 900px; top: 640px; width: 900px; height: 84px; padding: 0 40px; display: flex; align-items: center; gap: 18px; font-size: 36px; text-transform: none; }
+    #s13-blue sub { font-size: 20px; vertical-align: baseline; position: relative; top: 6px; }
+    #s13-neg { left: 900px; top: 756px; font-size: 26px; color: #FFFFFF; line-height: 1.6; }
+    #s13-neg sub { font-size: 16px; vertical-align: baseline; position: relative; top: 4px; }
+    #s13-foot { left: 120px; top: 800px; width: 700px; font-size: 22px; color: #FFFFFF; line-height: 1.6; text-transform: lowercase; }
+  </style>
+  <div id="root" data-composition-id="s13" data-width="1920" data-height="1080">
+    <div class="stage" id="s13-stage">
+      <div class="abs headline" id="s13-title">Programming a policy in weight space</div>
+      <div class="abs label" id="s13-data">480 scripted demos · 153 lifted / 255 crushed / 72 not lifted</div>
+      <div class="abs" id="s13-eq"><div id="s13-e0">θ = θ<sub>0</sub></div><div id="s13-e1">&nbsp;&nbsp;+ <span class="k">a</span>· τ<sub>lifted</sub></div><div id="s13-e2">&nbsp;&nbsp;+ <span class="k">c</span>· τ<sub>crushed</sub></div></div>
+      <div class="abs" id="s13-knobs"></div>
+      <div class="hair" id="s13-h1" style="left: 900px; top: 290px; width: 900px; height: 1px"></div>
+      <div class="hair" id="s13-h2" style="left: 900px; top: 612px; width: 900px; height: 1px"></div>
+      <div class="hair" id="s13-v1" style="left: 1200px; top: 290px; width: 1px; height: 322px"></div>
+      <div class="hair" id="s13-v2" style="left: 1500px; top: 290px; width: 1px; height: 322px"></div>
+      <div class="col" id="s13-c0" style="left: 900px; padding-left: 0"><div class="lab">θ<sub>0</sub> · all demos</div><div class="bn">27 %</div><div class="bl">lifted</div><div class="bs" id="s13-c0s">62 % crushed</div></div>
+      <div class="col" id="s13-c1" style="left: 1200px"><div class="lab">+ τ<sub>lifted</sub></div><div class="bn" id="s13-n1">27 %</div><div class="bl">lifted</div><div class="bs" id="s13-c1s">28 % crushed</div></div>
+      <div class="col" id="s13-c2" style="left: 1500px"><div class="lab">+ τ<sub>crushed</sub></div><div class="bn c-red" id="s13-n2">62 %</div><div class="bl c-red">crushed</div><div class="bs">13 % lifted</div></div>
+      <div class="blue abs" id="s13-blue"><span>+τ<sub>lifted</sub>: 27 %</span><svg width="44" height="20" viewBox="0 0 44 20"><path d="M2 10 L40 10 M30 2 L40 10 L30 18" fill="none" stroke="#FFFFFF" stroke-width="3" /></svg><span>67 % lifted</span></div>
+      <div class="abs" id="s13-neg"><div id="s13-neg1">−τ<sub>crushed</sub>: 3 % lifted. It breaks the reach.</div><div id="s13-neg2">Clock-only policy: at most 31 % on a moved egg.</div></div>
+      <div class="abs" id="s13-foot">5 seeds × 20 unseen egg positions<br />= 100 rollouts per program<br />No gradient step at program time</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s13";
+      const $ = (id) => document.getElementById(id);
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s13-stage", S);
+      V.header($("s13-stage"), tl);
+      V.enter(tl, "#s13-title", 0.2);
+      V.enter(tl, "#s13-data", V.t(S, "four hundred eighty"));
+      // a and c are knobs: -1 .. +2 maps to -135 .. +135 degrees
+      const box = $("s13-knobs");
+      const dials = {};
+      [["a", 70], ["c", 400]].forEach(([k, x]) => {
+        const kb = V.knob(box, x + 70, 80, 64);
+        V.el("div", "kl", box, k).style.cssText = "left:" + (x - 4) + "px; top: 0px";
+        const val = V.el("div", "kv", box, "+0.0"); val.style.left = (x + 150) + "px"; val.style.top = "46px";
+        const o = { v: 0 };
+        const show = () => { kb.set(-135 + 270 * (o.v + 1) / 3); val.textContent = (o.v < -0.001 ? "−" : "+") + Math.abs(o.v).toFixed(1); };
+        show();
+        dials[k] = (to, at) => tl.to(o, { v: to, duration: 0.9, ease: "power2.inOut", onUpdate: show }, at);
+      });
+      // the program appears with the voice
+      V.enter(tl, "#s13-e0", V.t(S, "We trained"));
+      V.enter(tl, "#s13-e1", V.t(S, "fine-tuned"));
+      V.enter(tl, "#s13-e2", V.t(S, "crushed ones"));
+      V.enter(tl, "#s13-knobs", V.t(S, "task vector"), { y: 8 });
+      tl.fromTo(["#s13-h1", "#s13-h2"], { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, V.t(S, "We trained"));
+      // the three programs wait as labelled columns; each number comes with its words
+      ["#s13-c0", "#s13-c1", "#s13-c2"].forEach((c, i) => V.enter(tl, c + " .lab", V.t(S, "fine-tuned") + i * 0.4, { y: 6 }));
+      const reveal = (c, t) => { gsap.set(c + " .bn, " + c + " .bl", { opacity: 0 }); tl.to(c + " .bn, " + c + " .bl", { opacity: 1, duration: 0.4 }, t); };
+      tl.fromTo(["#s13-v1", "#s13-v2"], { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.6, ease: "power2.inOut" }, V.t(S, "We trained") + 0.3);
+      // + tau_lifted: a 0 -> 1
+      dials.a(1, V.t(S, "Add the lifted"));
+      reveal("#s13-c0", V.t(S, "twenty-seven") - 0.3);
+      gsap.set(["#s13-c0s", "#s13-c1s"], { opacity: 0 });
+      reveal("#s13-c1", V.t(S, "sixty-seven") - 0.2);
+      V.counter(tl, $("s13-n1"), 27, 67, V.t(S, "sixty-seven") - 0.2, 0.8, (x) => Math.round(x) + " %");
+      tl.fromTo("#s13-blue", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, V.t(S, "percent"));
+      tl.to("#s13-c0s", { opacity: 1, duration: 0.3 }, V.t(S, "sixty-two"));
+      tl.to("#s13-c1s", { opacity: 1, duration: 0.3 }, V.t(S, "twenty-eight"));
+      // + tau_crushed: a back to 0, c 0 -> 1
+      const tC = V.t(S, "Add the crushed");
+      dials.a(0, tC - 0.2);
+      dials.c(1, tC);
+      reveal("#s13-c2", tC);
+      gsap.set("#s13-c2 .bs", { opacity: 0 });
+      tl.to("#s13-c2 .bs", { opacity: 1, duration: 0.3 }, V.t(S, "eighty-three"));
+      V.counter(tl, $("s13-n2"), 62, 83, tC, V.t(S, "eighty-three", 0, "e") - tC, (x) => Math.round(x) + " %");
+      // the negative result: c -> -1
+      dials.c(-1, V.t(S, "subtracting"));
+      V.enter(tl, "#s13-neg1", V.t(S, "subtracting"));
+      V.enter(tl, "#s13-neg2", V.t(S, "breaks the reach") + 0.4);
+      V.enter(tl, "#s13-foot", V.t(S, "Scripted demonstrations", 1));
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,1 @@
+Nemotron agrees on three of four, and four episodes is a smoke test, not an accuracy figure. Fifty-two tests pass. Our client speaks Rokoko's RGMP wire format, and round-trips joint angles. Replay gives the same label, four of four.

@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:te;src:url(te-20-0.woff2)}
+*{margin:0;box-sizing:border-box}
+body{width:1280px;height:720px;background:#767676;font-family:te,Inter,Helvetica,sans-serif;color:#fff;overflow:hidden;position:relative}
+.top{position:absolute;top:22px;left:40px;right:40px;display:flex;justify-content:space-between;font-size:20px;letter-spacing:.02em}
+.word{position:absolute;left:34px;top:34px;font-size:230px;font-weight:300;letter-spacing:-.04em;line-height:1}
+.panel{position:absolute;left:40px;right:40px;top:262px;bottom:40px;background:#0B0B0A;border-radius:28px;display:flex;gap:22px;padding:22px}
+.screen{flex:1;border-radius:16px;overflow:hidden;position:relative;background:#ccc}
+.screen img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.tag{position:absolute;left:16px;bottom:14px;display:flex;align-items:center;gap:12px;font-size:46px;color:#111;background:rgba(255,255,255,.88);border-radius:999px;padding:4px 22px 6px}
+.led{width:22px;height:22px;border-radius:50%;border:3px solid #111}
+.red .led{background:#FF1A0D;border-color:#FF1A0D}
+.red{color:#FF1A0D}
+.pill{position:absolute;right:62px;top:200px;background:#FF1A0D;color:#fff;border-radius:999px;padding:6px 26px 9px;font-size:30px}
+</style></head><body>
+<div class="top"><span>robot teleoperation</span><span>rokoko × junction 2026</span><span>glove input: simulated</span></div>
+<div class="word">egg shell</div>
+<div class="pill">the robot feels it</div>
+<div class="panel">
+ <div class="screen"><img src="careful.jpg"><div class="tag"><span class="led"></span>3.76 N</div></div>
+ <div class="screen"><img src="crush.jpg"><div class="tag red"><span class="led"></span>19.6 N</div></div>
+</div>
+</body></html>

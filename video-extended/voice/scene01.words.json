@@ -1,0 +1,158 @@
+{
+ "wav": "scene01.wav",
+ "ratio": 0.9655,
+ "mismatch": [
+  {
+   "script": "teleoperation",
+   "heard": "teleopration"
+  }
+ ],
+ "words": [
+  {
+   "w": "Robots",
+   "s": 0.0,
+   "e": 0.44
+  },
+  {
+   "w": "learn",
+   "s": 0.44,
+   "e": 0.8
+  },
+  {
+   "w": "to",
+   "s": 0.8,
+   "e": 1.0
+  },
+  {
+   "w": "grasp",
+   "s": 1.0,
+   "e": 1.34
+  },
+  {
+   "w": "from",
+   "s": 1.34,
+   "e": 1.6
+  },
+  {
+   "w": "human",
+   "s": 1.6,
+   "e": 1.94
+  },
+  {
+   "w": "demonstrations.",
+   "s": 1.94,
+   "e": 2.68
+  },
+  {
+   "w": "But",
+   "s": 3.42,
+   "e": 3.6
+  },
+  {
+   "w": "through",
+   "s": 3.6,
+   "e": 3.82
+  },
+  {
+   "w": "a",
+   "s": 3.82,
+   "e": 4.0
+  },
+  {
+   "w": "teleoperation",
+   "s": 4.0,
+   "e": 4.8
+  },
+  {
+   "w": "glove,",
+   "s": 4.8,
+   "e": 5.28
+  },
+  {
+   "w": "you",
+   "s": 5.66,
+   "e": 5.8
+  },
+  {
+   "w": "feel",
+   "s": 5.8,
+   "e": 6.02
+  },
+  {
+   "w": "nothing.",
+   "s": 6.02,
+   "e": 6.38
+  },
+  {
+   "w": "So",
+   "s": 7.22,
+   "e": 7.36
+  },
+  {
+   "w": "many",
+   "s": 7.36,
+   "e": 7.56
+  },
+  {
+   "w": "demos",
+   "s": 7.56,
+   "e": 7.92
+  },
+  {
+   "w": "end",
+   "s": 7.92,
+   "e": 8.36
+  },
+  {
+   "w": "as",
+   "s": 8.36,
+   "e": 8.62
+  },
+  {
+   "w": "drops",
+   "s": 8.62,
+   "e": 8.96
+  },
+  {
+   "w": "and",
+   "s": 8.96,
+   "e": 9.24
+  },
+  {
+   "w": "crushes,",
+   "s": 9.24,
+   "e": 9.62
+  },
+  {
+   "w": "and",
+   "s": 10.0,
+   "e": 10.22
+  },
+  {
+   "w": "someone",
+   "s": 10.22,
+   "e": 10.58
+  },
+  {
+   "w": "sorts",
+   "s": 10.58,
+   "e": 10.84
+  },
+  {
+   "w": "them",
+   "s": 10.84,
+   "e": 11.1
+  },
+  {
+   "w": "by",
+   "s": 11.1,
+   "e": 11.32
+  },
+  {
+   "w": "hand.",
+   "s": 11.32,
+   "e": 11.62
+  }
+ ],
+ "heard": "Robots learn to grasp from human demonstrations. But through a teleopration glove, you feel nothing. So many demos end as drops and crushes, and someone sorts them by hand."
+}

@@ -1,0 +1,1 @@
+Each episode file holds ten arrays, one row per step: time, raw glove frames, human angles, actions, wrist target, Inspire commands, joint positions, hand pose, egg pose and egg force. The actions and the wrist target are enough to replay it.

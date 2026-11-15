@@ -1,0 +1,37 @@
+{
+  "s07": {
+    "l0": {
+      "from": "Lifted Crushed",
+      "to": "Lifted Crushed",
+      "count": 1,
+      "tick": true
+    },
+    "l1": {
+      "from": "Crushed",
+      "to": "Crushed",
+      "count": 1,
+      "tick": true
+    },
+    "l2": {
+      "from": "Lifted Not",
+      "to": "Lifted Not",
+      "count": 1,
+      "tick": true
+    },
+    "l3": {
+      "from": "Not lifted",
+      "to": "Not lifted",
+      "count": 1,
+      "tick": true
+    }
+  },
+  "s11": {
+    "checks": {
+      "from": "Replay gives",
+      "to": "four of four",
+      "count": 4,
+      "from_offset": 0.3,
+      "tick": true
+    }
+  }
+}

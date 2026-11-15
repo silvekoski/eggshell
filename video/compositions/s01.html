@@ -1,0 +1,50 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s01-wm { top: 84px; }
+    #s01-p { left: 120px; top: 236px; width: 1680px; height: 650px; }
+    #s01-scr { left: 28px; top: 28px; width: 1056px; height: 594px; }
+    #s01-p .line { position: absolute; left: 1124px; top: 44px; width: 520px; font-size: 64px; font-weight: 200; letter-spacing: -0.03em; line-height: 1.05; text-transform: lowercase; }
+  </style>
+  <div id="root" data-composition-id="s01" data-width="1920" data-height="1080">
+    <div class="stage" id="s01-stage">
+      <div class="wordmark" id="s01-wm">egg shell</div>
+      <div class="panel" id="s01-p">
+        <div class="screen" id="s01-scr">
+          <img src="assets/data/hd-egg-at-4.0.jpg" alt="" />
+          <video data-hf-media-start-basis="local" id="s01-v1" class="clip" src="assets/footage/egg.mp4" muted playsinline data-start="0" data-duration="6.0" data-media-start="4.0"></video>
+          <img id="s01-cfirst" src="assets/data/hd-crush-at-0.0.jpg" alt="" />
+          <video data-hf-media-start-basis="local" id="s01-v2" class="clip" src="assets/footage/crush.mp4" muted playsinline data-start="6.0" data-duration="6.36" data-media-start="0"></video>
+        </div>
+        <div class="line" id="s01-l1">robots learn from demos</div>
+        <div class="line" id="s01-l2">you feel nothing</div>
+        <div class="line" id="s01-l3">drops. crushes.</div>
+        <div class="line" id="s01-l4">sorted by hand.</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s01";
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s01-stage", S, { noIn: true });
+      const stage = document.querySelector("#s01-stage"), panel = document.querySelector("#s01-p");
+      V.header(stage, tl);
+      gsap.set("#s01-cfirst", { opacity: 0 });
+      tl.set("#s01-cfirst", { opacity: 1 }, 5.96);
+      // the fader shows the grip of the crush part, and turns red at the crack
+      const D = V.data.footage.crush;
+      const h = V.hud(panel, D, { left: 1124, top: 252, height: 340, lift: false, gap: 120 });
+      V.syncFootage(tl, D, 6.0, 0, 6.36, h.update);
+      V.orangeRow(panel, 1330, 560, 5, 20, 62);
+      V.enter(tl, "#s01-l1", 0.2);
+      tl.to("#s01-l1", { opacity: 0, duration: 0.3 }, V.t(S, "But through") - 0.3);
+      V.enter(tl, "#s01-l2", V.t(S, "But through"));
+      tl.to("#s01-l2", { opacity: 0, duration: 0.3 }, V.t(S, "So many demos") - 0.3);
+      V.enter(tl, "#s01-l3", V.t(S, "drops"));
+      tl.to("#s01-l3", { opacity: 0, duration: 0.3 }, V.t(S, "someone sorts") - 0.3);
+      V.enter(tl, "#s01-l4", V.t(S, "someone sorts"));
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

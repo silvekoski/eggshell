@@ -1,0 +1,8 @@
+.hyperframes/
+node_modules/
+assets/data/
+out/stills/
+out/review/
+*.log
+out/test/
+voice/*.say.txt

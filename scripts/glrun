@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Run a command with headless MuJoCo rendering set up. On NixOS (no
+# /run/opengl-driver) it points EGL at Mesa from nixpkgs; elsewhere it only
+# sets MUJOCO_GL=egl.  Usage: scripts/glrun uv run teleop demo
+set -euo pipefail
+export MUJOCO_GL="${MUJOCO_GL:-egl}"
+if [ -e /etc/NIXOS ] && [ ! -e /run/opengl-driver/lib ] && command -v nix >/dev/null; then
+  # Mesa must come from the system's nixpkgs revision: a newer one links a
+  # newer glibc than the running Python and fails to load, silently.
+  rev="$(nixos-version --revision 2>/dev/null || true)"
+  pkgs="${rev:+github:NixOS/nixpkgs/$rev}"
+  pkgs="${pkgs:-nixpkgs}"
+  glvnd="$(nix build --no-link --print-out-paths "$pkgs#libglvnd")"
+  mesa="$(nix build --no-link --print-out-paths "$pkgs#mesa")"
+  export LD_LIBRARY_PATH="$glvnd/lib:$mesa/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+  export __EGL_VENDOR_LIBRARY_DIRS="$mesa/share/glvnd/egl_vendor.d"
+fi
+exec "$@"

@@ -1,0 +1,64 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s06-note { left: 40px; top: 352px; padding: 10px 18px; background: #0B0B0A; border-radius: 12px; font-size: 22px; white-space: nowrap; }
+    #s06-rev { left: 120px; top: 790px; font-size: 26px; color: #FFF; text-transform: lowercase; }
+    #s06-pill { left: 984px; top: 776px; }
+    #s06-pill .sm { font-size: 24px; line-height: 1.25; }
+    #s06-flag { color: var(--red); margin-left: 14px; }
+  </style>
+  <div id="root" data-composition-id="s06" data-width="1920" data-height="1080">
+    <div class="stage" id="s06-stage">
+      <div class="panel pp" id="s06-L" style="left: 120px">
+        <div class="pl">lifted · episode 0</div>
+        <div class="screen"><img src="assets/data/hd-egg-at-1.75.jpg" alt="" /><img id="s06-alast" src="assets/data/hd-egg-last.jpg" alt="" />
+          <video data-hf-media-start-basis="local" id="s06-va" class="clip" src="assets/footage/egg.mp4" muted playsinline data-start="0.9" data-duration="15.4" data-media-start="1.75"></video></div>
+        <div class="pn" id="s06-s0"><span class="led"></span><span class="w">simulator: lifted</span></div>
+      </div>
+      <div class="panel pp" id="s06-R" style="left: 984px">
+        <div class="pl">dropped · episode 2</div>
+        <div class="screen"><img src="assets/data/hd-drop-first.jpg" alt="" /><img id="s06-blast" src="assets/data/hd-drop-last.jpg" alt="" />
+          <video data-hf-media-start-basis="local" id="s06-vb" class="clip" src="assets/footage/drop.mp4" muted playsinline data-start="0.9" data-duration="7.95" data-media-start="0"></video>
+          <video data-hf-media-start-basis="local" id="s06-vb2" class="clip" src="assets/footage/drop.mp4" muted playsinline data-start="16.4" data-duration="2.95" data-media-start="5.0"></video></div>
+        <div class="abs" id="s06-note">t = 6.25 s · force 0.0 N · egg 3.4 cm up</div>
+        <div class="pn" id="s06-s1"><span class="led"></span><span class="w">simulator: lifted</span><span class="w" id="s06-flag">· flagged</span></div>
+      </div>
+      <div class="abs" id="s06-rev">review input: keyframes + force/lift log</div>
+      <div class="pill" id="s06-pill"><span>dropped · <span id="s06-conf">0.98</span></span><span class="sm">nemotron 3.5 super vl<br /><span id="s06-fl">flagged for a human</span></span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s06";
+      const $ = (id) => document.getElementById(id);
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s06-stage", S);
+      V.header($("s06-stage"), tl);
+      const A = V.data.footage.egg, B = V.data.footage.drop;
+      const ha = V.hud($("s06-L"), A, { left: 640, top: 70, height: 372, lift: true, gap: 85 });
+      const hb = V.hud($("s06-R"), B, { left: 640, top: 70, height: 372, lift: true, gap: 85 });
+      // in sync, aligned on first contact; the drop's release is replayed when the voice says "grip force hit zero"
+      V.syncFootage(tl, A, 0.9, 1.75, 15.4, ha.update);
+      V.syncFootage(tl, B, 0.9, 0, 7.95, hb.update);
+      V.syncFootage(tl, B, 16.4, 5.0, 2.95, hb.update);
+      gsap.set(["#s06-alast", "#s06-blast"], { opacity: 0 });
+      tl.set("#s06-alast", { opacity: 1 }, 0.9 + 15.4 - 0.04);
+      tl.set("#s06-blast", { opacity: 1 }, 0.9 + 7.95 - 0.04);
+      gsap.set(["#s06-s0", "#s06-s1"], { opacity: 0 });
+      V.enter(tl, ["#s06-s0", "#s06-s1"], V.t(S, "so the simulator says"), { stagger: 0.15, y: 8 });
+      gsap.set("#s06-flag", { opacity: 0 });
+      V.enter(tl, "#s06-rev", V.t(S, "NVIDIA Nemotron"), { y: 6 });
+      tl.to("#s06-rev", { opacity: 0, duration: 0.3 }, V.t(S, "Verdict") - 0.3);
+      gsap.set("#s06-fl", { opacity: 0 });
+      tl.fromTo("#s06-pill", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, V.t(S, "dropped"));
+      V.counter(tl, $("s06-conf"), 0, 0.98, V.t(S, "zero point nine eight"), V.t(S, "nine eight", 0, "e") - V.t(S, "zero point nine eight"), (x) => x.toFixed(2));
+      gsap.set("#s06-note", { opacity: 0 });
+      V.enter(tl, "#s06-note", V.t(S, "Grip force hit zero"), { y: 8 });
+      tl.to("#s06-note", { opacity: 0, duration: 0.3 }, V.t(S, "The episode is flagged") + 1.2);
+      tl.to("#s06-flag", { opacity: 1, duration: 0.3 }, V.t(S, "flagged"));
+      tl.to("#s06-fl", { opacity: 1, duration: 0.3 }, V.t(S, "flagged"));
+      tl.set("#s06-flag", { textContent: "· flagged · label kept" }, V.t(S, "The simulator label stays"));
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

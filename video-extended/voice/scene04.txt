@@ -1,0 +1,1 @@
+Then retargeting. Frames turn Z-up, and a yaw calibration points the fingers forward. Each angle comes from a bone relative to its parent, so hand position does not change it. A flat hand, held for five seconds, sets each person's zero, and a filter smooths the noise. Twenty-one human angles become twenty Shadow actuators, six Inspire values and a wrist target.

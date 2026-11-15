@@ -1,0 +1,1 @@
+Every try is saved as a training episode, with grip force per frame and a simulator label. Lifted. Crushed. Lifted. Not lifted.

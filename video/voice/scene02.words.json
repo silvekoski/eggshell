@@ -1,0 +1,197 @@
+{
+ "wav": "scene02.wav",
+ "ratio": 0.9444,
+ "mismatch": [
+  {
+   "script": "Rokoko",
+   "heard": "rococo"
+  },
+  {
+   "script": "MuJoCo,",
+   "heard": "moojohco"
+  }
+ ],
+ "words": [
+  {
+   "w": "Egg",
+   "s": 0.0,
+   "e": 0.24
+  },
+  {
+   "w": "Shell:",
+   "s": 0.24,
+   "e": 0.58
+  },
+  {
+   "w": "a",
+   "s": 1.04,
+   "e": 1.12
+  },
+  {
+   "w": "Rokoko",
+   "s": 1.12,
+   "e": 1.66
+  },
+  {
+   "w": "glove",
+   "s": 1.66,
+   "e": 1.92
+  },
+  {
+   "w": "stream",
+   "s": 1.92,
+   "e": 2.28
+  },
+  {
+   "w": "drives",
+   "s": 2.28,
+   "e": 2.64
+  },
+  {
+   "w": "a",
+   "s": 2.64,
+   "e": 2.9
+  },
+  {
+   "w": "Shadow",
+   "s": 2.9,
+   "e": 3.2
+  },
+  {
+   "w": "robot",
+   "s": 3.2,
+   "e": 3.68
+  },
+  {
+   "w": "hand",
+   "s": 3.68,
+   "e": 4.06
+  },
+  {
+   "w": "in",
+   "s": 4.06,
+   "e": 4.28
+  },
+  {
+   "w": "MuJoCo,",
+   "s": 4.28,
+   "e": 5.3
+  },
+  {
+   "w": "with",
+   "s": 5.3,
+   "e": 5.88
+  },
+  {
+   "w": "an",
+   "s": 5.88,
+   "e": 6.04
+  },
+  {
+   "w": "egg",
+   "s": 6.04,
+   "e": 6.32
+  },
+  {
+   "w": "that",
+   "s": 6.32,
+   "e": 6.54
+  },
+  {
+   "w": "can",
+   "s": 6.54,
+   "e": 6.7
+  },
+  {
+   "w": "crack.",
+   "s": 6.7,
+   "e": 7.08
+  },
+  {
+   "w": "The",
+   "s": 7.9,
+   "e": 7.98
+  },
+  {
+   "w": "glove",
+   "s": 7.98,
+   "e": 8.26
+  },
+  {
+   "w": "input",
+   "s": 8.26,
+   "e": 8.54
+  },
+  {
+   "w": "here",
+   "s": 8.54,
+   "e": 8.92
+  },
+  {
+   "w": "is",
+   "s": 8.92,
+   "e": 9.18
+  },
+  {
+   "w": "simulated:",
+   "s": 9.18,
+   "e": 9.68
+  },
+  {
+   "w": "a",
+   "s": 10.4,
+   "e": 10.48
+  },
+  {
+   "w": "scripted",
+   "s": 10.48,
+   "e": 10.86
+  },
+  {
+   "w": "operator,",
+   "s": 10.86,
+   "e": 11.48
+  },
+  {
+   "w": "through",
+   "s": 11.48,
+   "e": 12.06
+  },
+  {
+   "w": "the",
+   "s": 12.06,
+   "e": 12.26
+  },
+  {
+   "w": "same",
+   "s": 12.26,
+   "e": 12.5
+  },
+  {
+   "w": "pipeline",
+   "s": 12.5,
+   "e": 13.04
+  },
+  {
+   "w": "as",
+   "s": 13.04,
+   "e": 13.48
+  },
+  {
+   "w": "real",
+   "s": 13.48,
+   "e": 13.92
+  },
+  {
+   "w": "glove",
+   "s": 13.92,
+   "e": 14.22
+  },
+  {
+   "w": "data.",
+   "s": 14.22,
+   "e": 14.5
+  }
+ ],
+ "heard": "Egg shell, a rococo glove stream drives a shadow robot hand in moojohco with an egg that can crack. The glove input here is simulated, a scripted operator through the same pipeline as real glove data."
+}

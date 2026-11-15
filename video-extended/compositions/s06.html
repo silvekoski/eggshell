@@ -1,0 +1,44 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s06-n1 .n, #s06-n1 .w { color: var(--red); }
+  </style>
+  <div id="root" data-composition-id="s06" data-width="1920" data-height="1080">
+    <div class="stage" id="s06-stage">
+      <div class="panel pp" id="s06-L" style="left: 120px">
+        <div class="pl">careful · episode 0</div>
+        <div class="screen"><img src="assets/data/hd-egg-at-2.4.jpg" alt="" />
+          <video data-hf-media-start-basis="local" id="s06-va" class="clip" src="assets/footage/egg.mp4" muted playsinline data-start="0.2" data-duration="12.1" data-media-start="2.4"></video></div>
+        <div class="pn"><span class="led"></span><span class="n">3.76 N</span><span class="w">lifted</span></div>
+      </div>
+      <div class="panel pp" id="s06-R" style="left: 984px">
+        <div class="pl">squeeze · episode 1</div>
+        <div class="screen"><img src="assets/data/hd-crush-at-0.65.jpg" alt="" /><img id="s06-last" src="assets/data/hd-crush-last.jpg" alt="" />
+          <video data-hf-media-start-basis="local" id="s06-vb" class="clip" src="assets/footage/crush.mp4" muted playsinline data-start="0.2" data-duration="5.75" data-media-start="0.65"></video></div>
+        <div class="pn" id="s06-n1"><span class="led red"></span><span class="n">19.63 N</span><span class="w">crushed</span></div>
+        <div class="ps" id="s06-proxy">8 N is a simulation proxy, not a measured egg</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s06";
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s06-stage", S, { noIn: true });
+      const stage = document.querySelector("#s06-stage");
+      V.header(stage);
+      // both clips play in sync, aligned on first contact (the egg clip runs 1.75 s ahead of the crush clip)
+      const A = V.data.footage.egg, B = V.data.footage.crush;
+      const ha = V.hud(document.querySelector("#s06-L"), A, { left: 640, top: 70, height: 372, lift: true, gap: 85 });
+      const hb = V.hud(document.querySelector("#s06-R"), B, { left: 640, top: 70, height: 372, lift: false, gap: 85 });
+      V.syncFootage(tl, A, 0.2, 2.4, 12.1, ha.update);
+      V.syncFootage(tl, B, 0.2, 0.65, 5.75, hb.update);
+      gsap.set("#s06-last", { opacity: 0 });
+      tl.set("#s06-last", { opacity: 1 }, 0.2 + 5.75 - 0.04);
+      gsap.set("#s06-n1", { opacity: 0 });
+      tl.fromTo("#s06-n1", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, V.t(S, "nineteen point six"));
+      V.enter(tl, "#s06-proxy", V.t(S, "simulation proxy"), { y: 6 });
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

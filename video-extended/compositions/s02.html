@@ -1,0 +1,84 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s02-wm { top: 84px; }
+    #s02-p { left: 120px; top: 236px; width: 1680px; height: 650px; }
+    #s02-stage .src { position: absolute; top: 40px; width: 790px; height: 190px; padding: 28px 34px; border: 3px solid #FFF; border-radius: 22px; }
+    #s02-stage .src .k { font-size: 26px; color: #D2D2D2; text-transform: lowercase; }
+    #s02-stage .src .t { font-size: 54px; font-weight: 200; letter-spacing: -0.02em; margin-top: 12px; text-transform: lowercase; }
+    #s02-glove { left: 34px; }
+    #s02-op { left: 856px; }
+    #s02-na { position: absolute; right: 34px; top: 28px; font-size: 26px; color: #D2D2D2; }
+    #s02-used { position: absolute; right: 34px; top: 26px; font-size: 26px; display: flex; align-items: center; gap: 12px; }
+    #s02-stage .node { position: absolute; top: 380px; width: 370px; height: 170px; padding: 26px 30px; border: 3px solid #FFF; border-radius: 22px; }
+    #s02-stage .node .k { font-size: 26px; color: #D2D2D2; text-transform: lowercase; }
+    #s02-stage .node .t { font-size: 46px; font-weight: 200; letter-spacing: -0.02em; margin-top: 12px; }
+    #s02-lines { position: absolute; left: 0; top: 0; width: 1680px; height: 650px; }
+    #s02-pulse { position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: #FFF; }
+  </style>
+  <div id="root" data-composition-id="s02" data-width="1920" data-height="1080">
+    <div class="stage" id="s02-stage">
+      <div class="wordmark" id="s02-wm">egg shell</div>
+      <div class="panel" id="s02-p">
+        <svg id="s02-lines" viewBox="0 0 1680 650"></svg>
+        <div class="src" id="s02-glove"><div class="k">real glove</div><div class="t">rokoko smartglove</div><div id="s02-na">not available here</div></div>
+        <div class="src" id="s02-op"><div class="k">scripted operator</div><div class="t">same openxr frames</div><div id="s02-used"><span class="led red"></span>used here</div></div>
+        <div class="node" id="s02-n1" style="left: 34px"><div class="k">hand frames</div><div class="t">26 joints</div></div>
+        <div class="node" id="s02-n2" style="left: 444px"><div class="k">retargeting</div><div class="t">20 actuators</div></div>
+        <div class="node" id="s02-n3" style="left: 854px"><div class="k">mujoco</div><div class="t">hand + egg</div></div>
+        <div class="node" id="s02-n4" style="left: 1264px"><div class="k">episode</div><div class="t">+ label</div></div>
+        <div id="s02-pulse"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s02";
+      const $ = (id) => document.getElementById(id);
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s02-stage", S);
+      V.header($("s02-stage"), tl);
+      V.enter(tl, "#s02-wm", 0.1, { y: 0 });
+      V.enter(tl, "#s02-p", 0.15, { y: 0 });
+      const svg = $("s02-lines"), Y = 465;
+      const line = (pts, t, dashed) => {
+        const p = V.svg("path", { d: V.path(pts), stroke: "#FFFFFF", "stroke-width": 3, fill: "none", "stroke-dasharray": dashed ? "10 10" : "none" }, svg);
+        if (dashed) tl.fromTo(p, { opacity: 0 }, { opacity: 0.6, duration: 0.4 }, t); else V.draw(tl, p, t, 0.35, "none");
+        return p;
+      };
+      const arrow = (x1, x2, t) => {
+        line([[x1, Y], [x2 - 6, Y]], t);
+        const h = V.svg("path", { d: V.path([[x2 - 20, Y - 10], [x2 - 6, Y], [x2 - 20, Y + 10]]), stroke: "#FFFFFF", "stroke-width": 3, fill: "none" }, svg);
+        tl.fromTo(h, { opacity: 0 }, { opacity: 1, duration: 0.15 }, t + 0.3);
+      };
+      V.orangeRow($("s02-p"), 1380, 604, 5, 16, 52);
+      V.enter(tl, "#s02-glove", V.t(S, "a Rokoko glove"));
+      const g0 = line([[429, 230], [429, 300], [219, 300], [219, 376]], V.t(S, "a Rokoko glove") + 0.3);
+      const tD = V.t(S, "drives");
+      V.enter(tl, "#s02-n1", tD);
+      arrow(404, 444, tD + 0.3);
+      V.enter(tl, "#s02-n2", tD + 0.4);
+      arrow(814, 854, V.t(S, "in MuJoCo"));
+      V.enter(tl, "#s02-n3", V.t(S, "in MuJoCo"));
+      arrow(1224, 1264, V.t(S, "can crack"));
+      V.enter(tl, "#s02-n4", V.t(S, "can crack"));
+      // "simulated": the real glove goes dashed and grey; the scripted operator is what runs here
+      const tS = V.t(S, "simulated");
+      gsap.set("#s02-na", { opacity: 0 });
+      tl.to("#s02-glove", { borderColor: "rgba(255,255,255,0.4)", borderStyle: "dashed", duration: 0.5 }, tS - 0.2);
+      tl.to("#s02-glove .t", { color: "#8C8C8C", duration: 0.6 }, tS - 0.2);
+      tl.to(g0, { strokeDasharray: "10 10", opacity: 0.45, duration: 0.3 }, tS);
+      tl.to("#s02-na", { opacity: 1, duration: 0.4 }, tS + 0.2);
+      const tO = V.t(S, "a scripted operator");
+      V.enter(tl, "#s02-op", tO - 0.1);
+      line([[1251, 230], [1251, 320], [219, 320], [219, 376]], tO + 0.3);
+      const tP = V.t(S, "the same pipeline"), tE = V.t(S, "glove data", 0, "e");
+      gsap.set("#s02-pulse", { opacity: 0, x: 209, y: 310 });
+      tl.to("#s02-pulse", { opacity: 1, duration: 0.15 }, tP);
+      tl.to("#s02-pulse", { y: Y - 10, duration: 0.3, ease: "none" }, tP);
+      tl.to("#s02-pulse", { x: 1620, duration: tE - tP - 0.3, ease: "none" }, tP + 0.3);
+      tl.to("#s02-pulse", { opacity: 0, duration: 0.2 }, tE);
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

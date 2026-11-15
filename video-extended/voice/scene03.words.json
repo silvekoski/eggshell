@@ -1,0 +1,255 @@
+{
+ "wav": "scene03.wav",
+ "ratio": 0.8352,
+ "mismatch": [
+  {
+   "script": "Rokoko's",
+   "heard": "Rococo's"
+  },
+  {
+   "script": "RGMP",
+   "heard": "our GMP"
+  },
+  {
+   "script": "twelve two seven seven.",
+   "heard": "12277."
+  },
+  {
+   "script": "twenty-six OpenXR",
+   "heard": "26 open XR"
+  }
+ ],
+ "words": [
+  {
+   "w": "Here",
+   "s": 0.0,
+   "e": 0.3
+  },
+  {
+   "w": "is",
+   "s": 0.3,
+   "e": 0.54
+  },
+  {
+   "w": "the",
+   "s": 0.54,
+   "e": 0.72
+  },
+  {
+   "w": "wire",
+   "s": 0.72,
+   "e": 1.0
+  },
+  {
+   "w": "path.",
+   "s": 1.0,
+   "e": 1.4
+  },
+  {
+   "w": "Rokoko's",
+   "s": 2.1,
+   "e": 2.7
+  },
+  {
+   "w": "hand",
+   "s": 2.7,
+   "e": 2.88
+  },
+  {
+   "w": "solver",
+   "s": 2.88,
+   "e": 3.34
+  },
+  {
+   "w": "serves",
+   "s": 3.34,
+   "e": 3.72
+  },
+  {
+   "w": "RGMP",
+   "s": 3.72,
+   "e": 4.96
+  },
+  {
+   "w": "version",
+   "s": 4.96,
+   "e": 5.16
+  },
+  {
+   "w": "two",
+   "s": 5.16,
+   "e": 5.7
+  },
+  {
+   "w": "on",
+   "s": 5.7,
+   "e": 6.12
+  },
+  {
+   "w": "TCP",
+   "s": 6.12,
+   "e": 6.6
+  },
+  {
+   "w": "port",
+   "s": 6.6,
+   "e": 7.08
+  },
+  {
+   "w": "twelve",
+   "s": 7.08,
+   "e": 7.36
+  },
+  {
+   "w": "two",
+   "s": 7.36,
+   "e": 7.64
+  },
+  {
+   "w": "seven",
+   "s": 7.64,
+   "e": 7.92
+  },
+  {
+   "w": "seven.",
+   "s": 7.92,
+   "e": 8.2
+  },
+  {
+   "w": "Type",
+   "s": 9.16,
+   "e": 9.46
+  },
+  {
+   "w": "one",
+   "s": 9.46,
+   "e": 9.7
+  },
+  {
+   "w": "messages",
+   "s": 9.7,
+   "e": 10.2
+  },
+  {
+   "w": "define",
+   "s": 10.2,
+   "e": 10.62
+  },
+  {
+   "w": "the",
+   "s": 10.62,
+   "e": 10.88
+  },
+  {
+   "w": "stream.",
+   "s": 10.88,
+   "e": 11.16
+  },
+  {
+   "w": "Type",
+   "s": 11.96,
+   "e": 12.02
+  },
+  {
+   "w": "two",
+   "s": 12.02,
+   "e": 12.38
+  },
+  {
+   "w": "carry",
+   "s": 12.38,
+   "e": 12.78
+  },
+  {
+   "w": "twenty-six",
+   "s": 12.78,
+   "e": 13.59
+  },
+  {
+   "w": "OpenXR",
+   "s": 13.59,
+   "e": 14.4
+  },
+  {
+   "w": "joints,",
+   "s": 14.4,
+   "e": 14.92
+  },
+  {
+   "w": "each",
+   "s": 15.34,
+   "e": 15.58
+  },
+  {
+   "w": "a",
+   "s": 15.58,
+   "e": 15.72
+  },
+  {
+   "w": "position",
+   "s": 15.72,
+   "e": 16.08
+  },
+  {
+   "w": "and",
+   "s": 16.08,
+   "e": 16.56
+  },
+  {
+   "w": "a",
+   "s": 16.56,
+   "e": 16.64
+  },
+  {
+   "w": "rotation.",
+   "s": 16.64,
+   "e": 17.12
+  },
+  {
+   "w": "Our",
+   "s": 18.06,
+   "e": 18.2
+  },
+  {
+   "w": "client",
+   "s": 18.2,
+   "e": 18.52
+  },
+  {
+   "w": "reads",
+   "s": 18.52,
+   "e": 18.84
+  },
+  {
+   "w": "them",
+   "s": 18.84,
+   "e": 19.1
+  },
+  {
+   "w": "directly,",
+   "s": 19.1,
+   "e": 19.56
+  },
+  {
+   "w": "with",
+   "s": 19.56,
+   "e": 20.08
+  },
+  {
+   "w": "no",
+   "s": 20.08,
+   "e": 20.34
+  },
+  {
+   "w": "ROS",
+   "s": 20.34,
+   "e": 20.6
+  },
+  {
+   "w": "install.",
+   "s": 20.6,
+   "e": 21.08
+  }
+ ],
+ "heard": "Here is the wire path. Rococo's hand solver serves our GMP version two on TCP port 12277. Type one messages define the stream. Type two carry 26 open XR joints, each a position and a rotation. Our client reads them directly with no ROS install."
+}

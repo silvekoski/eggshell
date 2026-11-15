@@ -1,0 +1,108 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #root .cap {
+      position: absolute; left: 0; right: 0; bottom: 48px;
+      display: flex; justify-content: center; align-items: flex-end;
+    }
+    #root .cap span {
+      display: block; padding: 8px 24px 10px; border-radius: 24px;
+      background: rgba(11, 11, 10, 0.55); color: #FFFFFF; text-transform: lowercase;
+      font-family: "VID Inter", sans-serif; font-weight: 300; font-size: 34px; line-height: 1.3;
+      text-align: center; white-space: nowrap;
+    }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1920" data-height="1080">
+    <div id="cap-000" class="clip cap" data-start="0.12" data-duration="3.42" data-track-index="1"><span>Robots learn to grasp<br />from human demonstrations.</span></div>
+    <div id="cap-001" class="clip cap" data-start="3.54" data-duration="3.8" data-track-index="1"><span>But through a teleoperation<br />glove, you feel nothing.</span></div>
+    <div id="cap-002" class="clip cap" data-start="7.34" data-duration="4.93" data-track-index="1"><span>So many demos end as drops and crushes,<br />and someone sorts them by hand.</span></div>
+    <div id="cap-003" class="clip cap" data-start="12.487" data-duration="3.2" data-track-index="1"><span>Egg Shell: a Rokoko glove<br />stream drives a Shadow</span></div>
+    <div id="cap-004" class="clip cap" data-start="15.687" data-duration="4.7" data-track-index="1"><span>robot hand in MuJoCo,<br />with an egg that can crack.</span></div>
+    <div id="cap-005" class="clip cap" data-start="20.387" data-duration="3.58" data-track-index="1"><span>The glove input here is<br />simulated: a scripted operator,</span></div>
+    <div id="cap-006" class="clip cap" data-start="23.967" data-duration="3.55" data-track-index="1"><span>through the same pipeline<br />as real glove data.</span></div>
+    <div id="cap-007" class="clip cap" data-start="27.753" data-duration="2.1" data-track-index="1"><span>Here is the wire path.</span></div>
+    <div id="cap-008" class="clip cap" data-start="29.853" data-duration="3.06" data-track-index="1"><span>Rokoko's hand solver serves RGMP version</span></div>
+    <div id="cap-009" class="clip cap" data-start="32.913" data-duration="4.0" data-track-index="1"><span>two on TCP port twelve two seven seven.</span></div>
+    <div id="cap-010" class="clip cap" data-start="36.913" data-duration="2.8" data-track-index="1"><span>Type one messages define the stream.</span></div>
+    <div id="cap-011" class="clip cap" data-start="39.713" data-duration="6.1" data-track-index="1"><span>Type two carry twenty-six OpenXR joints,<br />each a position and a rotation.</span></div>
+    <div id="cap-012" class="clip cap" data-start="45.813" data-duration="3.55" data-track-index="1"><span>Our client reads them directly,<br />with no ROS install.</span></div>
+    <div id="cap-013" class="clip cap" data-start="49.653" data-duration="1.48" data-track-index="1"><span>Then retargeting.</span></div>
+    <div id="cap-014" class="clip cap" data-start="51.133" data-duration="4.38" data-track-index="1"><span>Frames turn Z-up, and a yaw<br />calibration points the fingers forward.</span></div>
+    <div id="cap-015" class="clip cap" data-start="55.513" data-duration="2.96" data-track-index="1"><span>Each angle comes from a<br />bone relative to its parent,</span></div>
+    <div id="cap-016" class="clip cap" data-start="58.473" data-duration="2.64" data-track-index="1"><span>so hand position does not change it.</span></div>
+    <div id="cap-017" class="clip cap" data-start="61.113" data-duration="2.62" data-track-index="1"><span>A flat hand, held for five seconds,</span></div>
+    <div id="cap-018" class="clip cap" data-start="63.733" data-duration="4.34" data-track-index="1"><span>sets each person's zero, and<br />a filter smooths the noise.</span></div>
+    <div id="cap-019" class="clip cap" data-start="68.093" data-duration="3.56" data-track-index="1"><span>Twenty-one human angles become<br />twenty Shadow actuators,</span></div>
+    <div id="cap-020" class="clip cap" data-start="71.653" data-duration="2.75" data-track-index="1"><span>six Inspire values and a wrist target.</span></div>
+    <div id="cap-021" class="clip cap" data-start="74.653" data-duration="1.6" data-track-index="1"><span>A careful try.</span></div>
+    <div id="cap-022" class="clip cap" data-start="76.253" data-duration="2.12" data-track-index="1"><span>The hand lifts the egg eleven centimetres,</span></div>
+    <div id="cap-023" class="clip cap" data-start="78.373" data-duration="4.15" data-track-index="1"><span>at a peak grip force of three<br />point seven six newtons.</span></div>
+    <div id="cap-024" class="clip cap" data-start="82.787" data-duration="1.86" data-track-index="1"><span>Now a squeeze.</span></div>
+    <div id="cap-025" class="clip cap" data-start="84.707" data-duration="2.58" data-track-index="1"><span>Force reaches nineteen point six newtons,</span></div>
+    <div id="cap-026" class="clip cap" data-start="87.287" data-duration="3.82" data-track-index="1"><span>past the crack threshold of<br />eight, and the egg turns red.</span></div>
+    <div id="cap-027" class="clip cap" data-start="91.107" data-duration="3.81" data-track-index="1"><span>That threshold is a simulation<br />proxy, not a measured egg.</span></div>
+    <div id="cap-028" class="clip cap" data-start="95.087" data-duration="2.38" data-track-index="1"><span>Every try is saved as a training episode,</span></div>
+    <div id="cap-029" class="clip cap" data-start="97.467" data-duration="3.76" data-track-index="1"><span>with grip force per frame<br />and a simulator label.</span></div>
+    <div id="cap-030" class="clip cap" data-start="101.227" data-duration="0.78" data-track-index="1"><span>Lifted.</span></div>
+    <div id="cap-031" class="clip cap" data-start="102.007" data-duration="0.72" data-track-index="1"><span>Crushed.</span></div>
+    <div id="cap-032" class="clip cap" data-start="102.727" data-duration="0.84" data-track-index="1"><span>Lifted.</span></div>
+    <div id="cap-033" class="clip cap" data-start="103.567" data-duration="1.05" data-track-index="1"><span>Not lifted.</span></div>
+    <div id="cap-034" class="clip cap" data-start="104.92" data-duration="4.24" data-track-index="1"><span>Each episode file holds ten<br />arrays, one row per step:</span></div>
+    <div id="cap-035" class="clip cap" data-start="109.16" data-duration="2.8" data-track-index="1"><span>time, raw glove frames, human angles,</span></div>
+    <div id="cap-036" class="clip cap" data-start="111.96" data-duration="3.24" data-track-index="1"><span>actions, wrist target, Inspire commands,</span></div>
+    <div id="cap-037" class="clip cap" data-start="115.2" data-duration="3.88" data-track-index="1"><span>joint positions, hand pose,<br />egg pose and egg force.</span></div>
+    <div id="cap-038" class="clip cap" data-start="119.08" data-duration="3.17" data-track-index="1"><span>The actions and the wrist<br />target are enough to replay it.</span></div>
+    <div id="cap-039" class="clip cap" data-start="122.42" data-duration="1.78" data-track-index="1"><span>But thresholds miss things.</span></div>
+    <div id="cap-040" class="clip cap" data-start="124.2" data-duration="4.7" data-track-index="1"><span>The third egg rose ten point nine<br />centimetres, so the simulator says lifted.</span></div>
+    <div id="cap-041" class="clip cap" data-start="128.9" data-duration="2.22" data-track-index="1"><span>Then the hand opened in the air.</span></div>
+    <div id="cap-042" class="clip cap" data-start="131.12" data-duration="4.48" data-track-index="1"><span>NVIDIA Nemotron reviews each episode<br />from keyframes and the force log.</span></div>
+    <div id="cap-043" class="clip cap" data-start="135.6" data-duration="3.98" data-track-index="1"><span>Verdict: dropped, confidence<br />zero point nine eight.</span></div>
+    <div id="cap-044" class="clip cap" data-start="139.58" data-duration="4.2" data-track-index="1"><span>Grip force hit zero with the egg<br />three point four centimetres up.</span></div>
+    <div id="cap-045" class="clip cap" data-start="143.78" data-duration="2.34" data-track-index="1"><span>The episode is flagged for a human.</span></div>
+    <div id="cap-046" class="clip cap" data-start="146.12" data-duration="1.89" data-track-index="1"><span>The simulator label stays.</span></div>
+    <div id="cap-047" class="clip cap" data-start="148.287" data-duration="2.1" data-track-index="1"><span>The review step by step.</span></div>
+    <div id="cap-048" class="clip cap" data-start="150.387" data-duration="3.58" data-track-index="1"><span>Nemotron gets four keyframes,<br />from first contact to the end,</span></div>
+    <div id="cap-049" class="clip cap" data-start="153.967" data-duration="3.72" data-track-index="1"><span>and a twenty-four row<br />force and lift timeline.</span></div>
+    <div id="cap-050" class="clip cap" data-start="157.687" data-duration="5.78" data-track-index="1"><span>It must answer in strict JSON, citing<br />a frame or the log for each claim.</span></div>
+    <div id="cap-051" class="clip cap" data-start="163.467" data-duration="2.86" data-track-index="1"><span>A bad schema gets one repair request.</span></div>
+    <div id="cap-052" class="clip cap" data-start="166.327" data-duration="3.32" data-track-index="1"><span>A grounding check compares<br />its numbers with the log.</span></div>
+    <div id="cap-053" class="clip cap" data-start="169.647" data-duration="2.48" data-track-index="1"><span>Then the cross-check with the simulator.</span></div>
+    <div id="cap-054" class="clip cap" data-start="172.127" data-duration="3.56" data-track-index="1"><span>One bug we hit: with a<br />twelve-hundred-token budget,</span></div>
+    <div id="cap-055" class="clip cap" data-start="175.687" data-duration="3.98" data-track-index="1"><span>the model spent it all<br />reasoning and replied empty.</span></div>
+    <div id="cap-056" class="clip cap" data-start="179.667" data-duration="4.79" data-track-index="1"><span>Now it gets four thousand ninety-six,<br />and empty replies are never cached.</span></div>
+    <div id="cap-057" class="clip cap" data-start="184.82" data-duration="2.36" data-track-index="1"><span>Nemotron agrees on three of four,</span></div>
+    <div id="cap-058" class="clip cap" data-start="187.18" data-duration="4.44" data-track-index="1"><span>and four episodes is a smoke<br />test, not an accuracy figure.</span></div>
+    <div id="cap-059" class="clip cap" data-start="191.62" data-duration="1.82" data-track-index="1"><span>Fifty-two tests pass.</span></div>
+    <div id="cap-060" class="clip cap" data-start="193.44" data-duration="6.26" data-track-index="1"><span>Our client speaks Rokoko's RGMP wire<br />format, and round-trips joint angles.</span></div>
+    <div id="cap-061" class="clip cap" data-start="199.78" data-duration="2.61" data-track-index="1"><span>Replay gives the same label, four of four.</span></div>
+    <div id="cap-062" class="clip cap" data-start="202.587" data-duration="2.7" data-track-index="1"><span>What is verified, and what is not.</span></div>
+    <div id="cap-063" class="clip cap" data-start="205.287" data-duration="4.46" data-track-index="1"><span>Verified with no gloves: the wire<br />format against Rokoko's bridge code,</span></div>
+    <div id="cap-064" class="clip cap" data-start="209.747" data-duration="4.42" data-track-index="1"><span>the angle maths, the MuJoCo<br />hand, labels and replay.</span></div>
+    <div id="cap-065" class="clip cap" data-start="214.167" data-duration="3.06" data-track-index="1"><span>Still needs hardware: real Smartglove data,</span></div>
+    <div id="cap-066" class="clip cap" data-start="217.227" data-duration="4.24" data-track-index="1"><span>the ROS 2 path, the live viewer,<br />and a real Inspire hand.</span></div>
+    <div id="cap-067" class="clip cap" data-start="221.467" data-duration="2.27" data-track-index="1"><span>And the crack threshold stays a proxy.</span></div>
+    <div id="cap-068" class="clip cap" data-start="224.087" data-duration="2.48" data-track-index="1"><span>The labels make the data trainable.</span></div>
+    <div id="cap-069" class="clip cap" data-start="226.567" data-duration="4.56" data-track-index="1"><span>We trained a small policy on four<br />hundred eighty scripted demonstrations,</span></div>
+    <div id="cap-070" class="clip cap" data-start="231.127" data-duration="5.46" data-track-index="1"><span>then fine-tuned one copy on the lifted<br />ones and one on the crushed ones.</span></div>
+    <div id="cap-071" class="clip cap" data-start="236.587" data-duration="2.74" data-track-index="1"><span>The difference in weights is a task vector.</span></div>
+    <div id="cap-072" class="clip cap" data-start="239.327" data-duration="2.1" data-track-index="1"><span>Add the lifted vector, with no new training,</span></div>
+    <div id="cap-073" class="clip cap" data-start="241.427" data-duration="2.58" data-track-index="1"><span>and success on unseen eggs goes from</span></div>
+    <div id="cap-074" class="clip cap" data-start="244.007" data-duration="2.02" data-track-index="1"><span>twenty-seven to sixty-seven percent,</span></div>
+    <div id="cap-075" class="clip cap" data-start="246.027" data-duration="3.52" data-track-index="1"><span>while crushes fall from<br />sixty-two to twenty-eight.</span></div>
+    <div id="cap-076" class="clip cap" data-start="249.547" data-duration="2.92" data-track-index="1"><span>Add the crushed vector, and<br />crushes rise to eighty-three.</span></div>
+    <div id="cap-077" class="clip cap" data-start="252.467" data-duration="5.8" data-track-index="1"><span>Not everything works: subtracting<br />the crushed vector breaks the reach.</span></div>
+    <div id="cap-078" class="clip cap" data-start="258.287" data-duration="3.05" data-track-index="1"><span>Scripted demonstrations, simulated egg.</span></div>
+    <div id="cap-079" class="clip cap" data-start="261.553" data-duration="3.74" data-track-index="1"><span>Next: real Rokoko gloves at the venue,</span></div>
+    <div id="cap-080" class="clip cap" data-start="265.293" data-duration="2.92" data-track-index="1"><span>Inspire hand commands sent to a real hand,</span></div>
+    <div id="cap-081" class="clip cap" data-start="268.213" data-duration="4.27" data-track-index="1"><span>and a behaviour-cloning policy<br />trained on clean episodes only.</span></div>
+    <div id="cap-082" class="clip cap" data-start="272.72" data-duration="0.84" data-track-index="1"><span>Egg Shell.</span></div>
+    <div id="cap-083" class="clip cap" data-start="273.56" data-duration="2.03" data-track-index="1"><span>The robot feels what you can't.</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.set({}, {}, 277.0333);
+      window.__timelines["captions"] = tl;
+    })();
+  </script>
+</template>

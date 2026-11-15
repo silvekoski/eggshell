@@ -1,0 +1,170 @@
+1
+00:00:00,120 --> 00:00:03,540
+Robots learn to grasp
+from human demonstrations.
+
+2
+00:00:03,540 --> 00:00:07,340
+But through a teleoperation
+glove, you feel nothing.
+
+3
+00:00:07,340 --> 00:00:12,270
+So many demos end as drops and crushes,
+and someone sorts them by hand.
+
+4
+00:00:12,487 --> 00:00:15,687
+Egg Shell: a Rokoko glove
+stream drives a Shadow
+
+5
+00:00:15,687 --> 00:00:20,387
+robot hand in MuJoCo,
+with an egg that can crack.
+
+6
+00:00:20,387 --> 00:00:23,967
+The glove input here is
+simulated: a scripted operator,
+
+7
+00:00:23,967 --> 00:00:27,517
+through the same pipeline
+as real glove data.
+
+8
+00:00:27,753 --> 00:00:29,353
+A careful try.
+
+9
+00:00:29,353 --> 00:00:31,473
+The hand lifts the egg eleven centimetres,
+
+10
+00:00:31,473 --> 00:00:35,623
+at a peak grip force of three
+point seven six newtons.
+
+11
+00:00:35,887 --> 00:00:37,747
+Now a squeeze.
+
+12
+00:00:37,807 --> 00:00:40,387
+Force reaches nineteen point six newtons,
+
+13
+00:00:40,387 --> 00:00:44,207
+past the crack threshold of
+eight, and the egg turns red.
+
+14
+00:00:44,207 --> 00:00:48,017
+That threshold is a simulation
+proxy, not a measured egg.
+
+15
+00:00:48,187 --> 00:00:50,567
+Every try is saved as a training episode,
+
+16
+00:00:50,567 --> 00:00:54,327
+with grip force per frame
+and a simulator label.
+
+17
+00:00:54,327 --> 00:00:55,107
+Lifted.
+
+18
+00:00:55,107 --> 00:00:55,827
+Crushed.
+
+19
+00:00:55,827 --> 00:00:56,667
+Lifted.
+
+20
+00:00:56,667 --> 00:00:57,717
+Not lifted.
+
+21
+00:00:58,020 --> 00:00:59,800
+But thresholds miss things.
+
+22
+00:00:59,800 --> 00:01:04,500
+The third egg rose ten point nine
+centimetres, so the simulator says lifted.
+
+23
+00:01:04,500 --> 00:01:06,720
+Then the hand opened in the air.
+
+24
+00:01:06,720 --> 00:01:11,200
+NVIDIA Nemotron reviews each episode
+from keyframes and the force log.
+
+25
+00:01:11,200 --> 00:01:15,180
+Verdict: dropped, confidence
+zero point nine eight.
+
+26
+00:01:15,180 --> 00:01:19,380
+Grip force hit zero with the egg
+three point four centimetres up.
+
+27
+00:01:19,380 --> 00:01:21,720
+The episode is flagged for a human.
+
+28
+00:01:21,720 --> 00:01:23,610
+The simulator label stays.
+
+29
+00:01:23,887 --> 00:01:26,247
+Nemotron agrees on three of four,
+
+30
+00:01:26,247 --> 00:01:30,687
+and four episodes is a smoke
+test, not an accuracy figure.
+
+31
+00:01:30,687 --> 00:01:32,507
+Fifty-two tests pass.
+
+32
+00:01:32,507 --> 00:01:38,767
+Our client speaks Rokoko's RGMP wire
+format, and round-trips joint angles.
+
+33
+00:01:38,847 --> 00:01:41,457
+Replay gives the same label, four of four.
+
+34
+00:01:41,653 --> 00:01:45,393
+Next: real Rokoko gloves at the venue,
+
+35
+00:01:45,393 --> 00:01:48,313
+Inspire hand commands sent to a real hand,
+
+36
+00:01:48,313 --> 00:01:52,583
+and a behaviour-cloning policy
+trained on clean episodes only.
+
+37
+00:01:52,820 --> 00:01:53,660
+Egg Shell.
+
+38
+00:01:53,660 --> 00:01:55,690
+The robot feels what you can't.
+

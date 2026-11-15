@@ -1,0 +1,137 @@
+{
+ "wav": "scene08.wav",
+ "ratio": 0.898,
+ "mismatch": [
+  {
+   "script": "Rokoko",
+   "heard": "rococo"
+  },
+  {
+   "script": "behaviour-cloning",
+   "heard": "behavior cloning"
+  }
+ ],
+ "words": [
+  {
+   "w": "Next:",
+   "s": 0.0,
+   "e": 0.48
+  },
+  {
+   "w": "real",
+   "s": 1.1,
+   "e": 1.2
+  },
+  {
+   "w": "Rokoko",
+   "s": 1.2,
+   "e": 1.74
+  },
+  {
+   "w": "gloves",
+   "s": 1.74,
+   "e": 2.18
+  },
+  {
+   "w": "at",
+   "s": 2.18,
+   "e": 2.38
+  },
+  {
+   "w": "the",
+   "s": 2.38,
+   "e": 2.48
+  },
+  {
+   "w": "venue,",
+   "s": 2.48,
+   "e": 2.8
+  },
+  {
+   "w": "Inspire",
+   "s": 3.74,
+   "e": 3.84
+  },
+  {
+   "w": "hand",
+   "s": 3.84,
+   "e": 4.24
+  },
+  {
+   "w": "commands",
+   "s": 4.24,
+   "e": 4.8
+  },
+  {
+   "w": "sent",
+   "s": 4.8,
+   "e": 5.12
+  },
+  {
+   "w": "to",
+   "s": 5.12,
+   "e": 5.34
+  },
+  {
+   "w": "a",
+   "s": 5.34,
+   "e": 5.48
+  },
+  {
+   "w": "real",
+   "s": 5.48,
+   "e": 5.74
+  },
+  {
+   "w": "hand,",
+   "s": 5.74,
+   "e": 6.2
+  },
+  {
+   "w": "and",
+   "s": 6.66,
+   "e": 6.84
+  },
+  {
+   "w": "a",
+   "s": 6.84,
+   "e": 6.94
+  },
+  {
+   "w": "behaviour-cloning",
+   "s": 6.94,
+   "e": 7.68
+  },
+  {
+   "w": "policy",
+   "s": 7.68,
+   "e": 8.3
+  },
+  {
+   "w": "trained",
+   "s": 8.3,
+   "e": 8.82
+  },
+  {
+   "w": "on",
+   "s": 8.82,
+   "e": 9.14
+  },
+  {
+   "w": "clean",
+   "s": 9.14,
+   "e": 9.46
+  },
+  {
+   "w": "episodes",
+   "s": 9.46,
+   "e": 9.96
+  },
+  {
+   "w": "only.",
+   "s": 9.96,
+   "e": 10.4
+  }
+ ],
+ "heard": "Next, real rococo gloves at the venue, inspire hand commands sent to a real hand, and a behavior cloning policy trained on clean episodes only."
+}

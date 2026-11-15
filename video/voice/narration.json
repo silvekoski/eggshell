@@ -1,0 +1,65 @@
+[
+ {
+  "scene": 1,
+  "title": "Hook",
+  "about_s": 12,
+  "words": 29,
+  "text": "Robots learn to grasp from human demonstrations. But through a teleoperation glove, you feel nothing. So many demos end as drops and crushes, and someone sorts them by hand."
+ },
+ {
+  "scene": 2,
+  "title": "What it is",
+  "about_s": 14,
+  "words": 36,
+  "text": "Egg Shell: a Rokoko glove stream drives a Shadow robot hand in MuJoCo, with an egg that can crack. The glove input here is simulated: a scripted operator, through the same pipeline as real glove data."
+ },
+ {
+  "scene": 3,
+  "title": "A clean lift",
+  "about_s": 9,
+  "words": 21,
+  "text": "A careful try. The hand lifts the egg eleven centimetres, at a peak grip force of three point seven six newtons."
+ },
+ {
+  "scene": 4,
+  "title": "The crush",
+  "about_s": 12,
+  "words": 30,
+  "text": "Now a squeeze. Force reaches nineteen point six newtons, past the crack threshold of eight, and the egg turns red. That threshold is a simulation proxy, not a measured egg."
+ },
+ {
+  "scene": 5,
+  "title": "Every try is an episode",
+  "about_s": 11,
+  "words": 22,
+  "text": "Every try is saved as a training episode, with grip force per frame and a simulator label. Lifted. Crushed. Lifted. Not lifted."
+ },
+ {
+  "scene": 6,
+  "title": "Thresholds miss things",
+  "about_s": 25,
+  "words": 65,
+  "text": "But thresholds miss things. The third egg rose ten point nine centimetres, so the simulator says lifted. Then the hand opened in the air. NVIDIA Nemotron reviews each episode from keyframes and the force log. Verdict: dropped, confidence zero point nine eight. Grip force hit zero with the egg three point four centimetres up. The episode is flagged for a human. The simulator label stays."
+ },
+ {
+  "scene": 7,
+  "title": "Proof",
+  "about_s": 14,
+  "words": 39,
+  "text": "Nemotron agrees on three of four, and four episodes is a smoke test, not an accuracy figure. Fifty-two tests pass. Our client speaks Rokoko's RGMP wire format, and round-trips joint angles. Replay gives the same label, four of four."
+ },
+ {
+  "scene": 8,
+  "title": "Next",
+  "about_s": 10,
+  "words": 24,
+  "text": "Next: real Rokoko gloves at the venue, Inspire hand commands sent to a real hand, and a behaviour-cloning policy trained on clean episodes only."
+ },
+ {
+  "scene": 9,
+  "title": "Close",
+  "about_s": 4,
+  "words": 8,
+  "text": "Egg Shell. The robot feels what you can't."
+ }
+]

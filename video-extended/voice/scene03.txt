@@ -1,0 +1,1 @@
+Here is the wire path. Rokoko's hand solver serves RGMP version two on TCP port twelve two seven seven. Type one messages define the stream. Type two carry twenty-six OpenXR joints, each a position and a rotation. Our client reads them directly, with no ROS install.

@@ -1,0 +1,52 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s05-stage .cell { position: absolute; width: 760px; height: 380px; }
+    #s05-stage .cell .screen { left: 22px; top: 22px; width: 716px; height: 268px; }
+    #s05-stage .cell .screen img, #s05-stage .cell .screen video { transform: scale(1.15); transform-origin: 42% 45%; }
+    #s05-stage .cell .strip { position: absolute; left: 26px; right: 26px; top: 304px; height: 56px; display: flex; align-items: center; gap: 18px; white-space: nowrap; }
+    #s05-stage .cell .ep { font-size: 24px; color: #D2D2D2; }
+    #s05-stage .cell .lab { font-size: 34px; font-weight: 300; }
+    #s05-stage .cell .lab.red { color: var(--red); }
+    #s05-stage .cell .num { font-size: 30px; font-weight: 200; margin-left: auto; }
+  </style>
+  <div id="root" data-composition-id="s05" data-width="1920" data-height="1080">
+    <div class="stage" id="s05-stage">
+      <div class="panel cell" id="s05-e0" style="left: 180px; top: 112px"><div class="screen"><img src="assets/data/hd-egg-at-4.0.jpg" alt="" /><img class="last" src="assets/data/hd-egg-at-12.0.jpg" alt="" />
+        <video data-hf-media-start-basis="local" id="s05-v0" class="clip" src="assets/footage/egg.mp4" muted playsinline data-start="0.2" data-duration="9.63" data-media-start="4.0"></video></div><div class="strip"></div></div>
+      <div class="panel cell" id="s05-e1" style="left: 980px; top: 112px"><div class="screen"><img src="assets/data/hd-crush-first.jpg" alt="" /><img class="last" src="assets/data/hd-crush-last.jpg" alt="" />
+        <video data-hf-media-start-basis="local" id="s05-v1" class="clip" src="assets/footage/crush.mp4" muted playsinline data-start="0.2" data-duration="6.15" data-media-start="0.2"></video></div><div class="strip"></div></div>
+      <div class="panel cell" id="s05-e2" style="left: 180px; top: 516px"><div class="screen"><img src="assets/data/hd-drop-first.jpg" alt="" /><img class="last" src="assets/data/hd-drop-last.jpg" alt="" />
+        <video data-hf-media-start-basis="local" id="s05-v2" class="clip" src="assets/footage/drop.mp4" muted playsinline data-start="0.2" data-duration="7.75" data-media-start="0.2"></video></div><div class="strip"></div></div>
+      <div class="panel cell" id="s05-e3" style="left: 980px; top: 516px"><div class="screen"><img src="assets/data/hd-miss-first.jpg" alt="" /><img class="last" src="assets/data/hd-miss-last.jpg" alt="" />
+        <video data-hf-media-start-basis="local" id="s05-v3" class="clip" src="assets/footage/miss.mp4" muted playsinline data-start="0.2" data-duration="5.75" data-media-start="0.2"></video></div><div class="strip"></div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s05";
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s05-stage", S);
+      V.header(document.querySelector("#s05-stage"), tl);
+      const ends = [0.2 + 9.63, 0.2 + 6.15, 0.2 + 7.75, 0.2 + 5.75];
+      const word = { lifted: "lifted", crushed: "crushed", not_lifted: "not lifted" };
+      const led = { lifted: "led", crushed: "led red", not_lifted: "led grey" };
+      const cue = V.timing.cues[S];
+      V.enter(tl, ["#s05-e0", "#s05-e1", "#s05-e2", "#s05-e3"], 0.1, { y: 16, stagger: 0.08 });
+      V.data.episodes.forEach((e, i) => {
+        const cell = document.querySelector("#s05-e" + i), strip = cell.querySelector(".strip");
+        V.el("div", "ep", strip, "episode " + e.episode);
+        const l = V.el("span", led[e.outcome], strip);
+        const lab = V.el("div", "lab" + (e.outcome === "crushed" ? " red" : ""), strip, word[e.outcome]);
+        const lift = (e.max_lift_m * 100).toFixed(1) + " cm · ";
+        const num = V.el("div", "num", strip, (e.outcome === "crushed" ? "" : lift) + e.peak_force_n.toFixed(2) + " N");
+        const at = cue["l" + i][0];
+        tl.fromTo([l, lab, num], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, at);
+        const last = cell.querySelector(".last");
+        gsap.set(last, { opacity: 0 });
+        tl.set(last, { opacity: 1 }, Math.min(ends[i], V.dur(S)) - 0.04);
+      });
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

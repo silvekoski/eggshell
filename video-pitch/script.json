@@ -1,0 +1,89 @@
+[
+ {
+  "id": "s00",
+  "seconds": 1.5,
+  "enter": "logo",
+  "enterVolume": 0.4
+ },
+ {
+  "id": "s01",
+  "text": "Robots learn to grasp from human demonstrations. But through a teleoperation glove, you feel nothing. So demos end as drops and crushes, and someone sorts them by hand.",
+  "sfx": [
+   {
+    "word": "nothing",
+    "sound": "hit",
+    "volume": 0.3
+   }
+  ]
+ },
+ {
+  "id": "s02",
+  "text": "Egg Shell gives the robot the sense you lack. A glove stream drives a twenty-actuator Shadow hand in MuJoCo, holding an egg that can crack. One honest note: we had no Rokoko gloves, so all glove input here is simulated, by a scripted operator."
+ },
+ {
+  "id": "s03",
+  "text": "A careful lift: eleven centimetres, three point eight newtons. The egg survives. Squeeze too hard: nineteen point six newtons, past the eight newton crack threshold, and the egg turns red.",
+  "sfx": [
+   {
+    "word": "red",
+    "sound": "hit",
+    "volume": 0.3
+   }
+  ]
+ },
+ {
+  "id": "s04",
+  "text": "Every try becomes a labelled episode, with the grip force of every frame: lifted, crushed, or not lifted.",
+  "sfx": [
+   {
+    "word": "Lifted",
+    "sound": "pop"
+   },
+   {
+    "word": "crushed",
+    "sound": "pop"
+   },
+   {
+    "word": "not",
+    "sound": "pop"
+   }
+  ]
+ },
+ {
+  "id": "s05",
+  "text": "But thresholds miss things. This egg rose eleven centimetres, then the hand opened, and the simulator still says lifted. NVIDIA Nemotron reviews each episode from four keyframes and the force log. It says dropped, and flags it for a human.",
+  "sfx": [
+   {
+    "word": "dropped",
+    "sound": "ping",
+    "volume": 0.28
+   }
+  ]
+ },
+ {
+  "id": "s06",
+  "text": "Labels make the data trainable. We trained a policy on four hundred eighty demos, then added the lifted task vector to its weights, with no new training. Lifts rose from twenty-seven to sixty-seven percent. Subtracting the crushed vector failed: it broke the reach."
+ },
+ {
+  "id": "s07",
+  "text": "Fifty-seven tests pass. Our wire client is rebuilt from Rokoko's bridge code, and replay gives the same label four times out of four.",
+  "sfx": [
+   {
+    "word": "pass",
+    "sound": "ping",
+    "volume": 0.25
+   }
+  ]
+ },
+ {
+  "id": "s08",
+  "text": "Next: real gloves at the venue, the Inspire hand, whose commands we already compute, and many more demonstrations."
+ },
+ {
+  "id": "s09",
+  "text": "Egg Shell. The robot feels what you can't.",
+  "hold": 45,
+  "enter": "swell",
+  "enterVolume": 0.3
+ }
+]

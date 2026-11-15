@@ -1,0 +1,1211 @@
+{
+ "episodes": 120,
+ "counts": {
+  "lifted": 36,
+  "crushed": 69,
+  "not_lifted": 15
+ },
+ "seconds": 36.8,
+ "episodes_detail": [
+  {
+   "seed": 0,
+   "grip": 0.637,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0009,
+   "final_lift_m": -0.008,
+   "peak_force_n": 2.971,
+   "gentleness": 0.629
+  },
+  {
+   "seed": 1,
+   "grip": 0.913,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1302,
+   "final_lift_m": -0.008,
+   "peak_force_n": 20.611,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 2,
+   "grip": 0.816,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0003,
+   "final_lift_m": -0.008,
+   "peak_force_n": 4.598,
+   "gentleness": 0.425
+  },
+  {
+   "seed": 3,
+   "grip": 0.176,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1133,
+   "final_lift_m": -0.0073,
+   "peak_force_n": 3.484,
+   "gentleness": 0.564
+  },
+  {
+   "seed": 4,
+   "grip": 0.028,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1092,
+   "final_lift_m": -0.0026,
+   "peak_force_n": 3.731,
+   "gentleness": 0.534
+  },
+  {
+   "seed": 5,
+   "grip": 0.384,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0009,
+   "final_lift_m": -0.008,
+   "peak_force_n": 2.351,
+   "gentleness": 0.706
+  },
+  {
+   "seed": 6,
+   "grip": 0.688,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1268,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 12.189,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 7,
+   "grip": 0.31,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1143,
+   "final_lift_m": -0.008,
+   "peak_force_n": 7.814,
+   "gentleness": 0.023
+  },
+  {
+   "seed": 8,
+   "grip": 0.572,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1249,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 10.192,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 9,
+   "grip": 0.89,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": 0.0003,
+   "final_lift_m": -0.008,
+   "peak_force_n": 4.727,
+   "gentleness": 0.409
+  },
+  {
+   "seed": 10,
+   "grip": 0.787,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1279,
+   "final_lift_m": -0.008,
+   "peak_force_n": 16.478,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 11,
+   "grip": 0.15,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.113,
+   "final_lift_m": -0.0073,
+   "peak_force_n": 3.181,
+   "gentleness": 0.602
+  },
+  {
+   "seed": 12,
+   "grip": 0.405,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1205,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 7.681,
+   "gentleness": 0.04
+  },
+  {
+   "seed": 13,
+   "grip": 0.672,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1277,
+   "final_lift_m": -0.008,
+   "peak_force_n": 12.45,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 14,
+   "grip": 0.629,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1269,
+   "final_lift_m": -0.008,
+   "peak_force_n": 12.11,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 15,
+   "grip": 0.425,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0007,
+   "final_lift_m": -0.008,
+   "peak_force_n": 3.594,
+   "gentleness": 0.551
+  },
+  {
+   "seed": 16,
+   "grip": 0.758,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1291,
+   "final_lift_m": -0.008,
+   "peak_force_n": 13.477,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 17,
+   "grip": 0.734,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1252,
+   "final_lift_m": -0.008,
+   "peak_force_n": 16.108,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 18,
+   "grip": 0.927,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1282,
+   "final_lift_m": -0.008,
+   "peak_force_n": 15.56,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 19,
+   "grip": 0.957,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.0292,
+   "final_lift_m": -0.008,
+   "peak_force_n": 18.568,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 20,
+   "grip": 0.48,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1213,
+   "final_lift_m": -0.008,
+   "peak_force_n": 11.294,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 21,
+   "grip": 0.539,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1246,
+   "final_lift_m": -0.008,
+   "peak_force_n": 9.156,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 22,
+   "grip": 0.614,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0009,
+   "final_lift_m": -0.008,
+   "peak_force_n": 3.364,
+   "gentleness": 0.579
+  },
+  {
+   "seed": 23,
+   "grip": 0.513,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1244,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 9.646,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 24,
+   "grip": 0.344,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1178,
+   "final_lift_m": -0.008,
+   "peak_force_n": 7.275,
+   "gentleness": 0.091
+  },
+  {
+   "seed": 25,
+   "grip": 0.242,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1148,
+   "final_lift_m": -0.0073,
+   "peak_force_n": 3.807,
+   "gentleness": 0.524
+  },
+  {
+   "seed": 26,
+   "grip": 0.586,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1256,
+   "final_lift_m": -0.008,
+   "peak_force_n": 10.772,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 27,
+   "grip": 0.413,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1187,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 9.156,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 28,
+   "grip": 0.553,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1239,
+   "final_lift_m": -0.008,
+   "peak_force_n": 8.61,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 29,
+   "grip": 0.91,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1315,
+   "final_lift_m": -0.008,
+   "peak_force_n": 18.806,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 30,
+   "grip": 0.01,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1089,
+   "final_lift_m": -0.008,
+   "peak_force_n": 2.921,
+   "gentleness": 0.635
+  },
+  {
+   "seed": 31,
+   "grip": 0.703,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1279,
+   "final_lift_m": -0.008,
+   "peak_force_n": 12.891,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 32,
+   "grip": 0.381,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1205,
+   "final_lift_m": -0.0075,
+   "peak_force_n": 8.171,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 33,
+   "grip": 0.309,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1149,
+   "final_lift_m": -0.008,
+   "peak_force_n": 7.542,
+   "gentleness": 0.057
+  },
+  {
+   "seed": 34,
+   "grip": 0.344,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.118,
+   "final_lift_m": -0.0074,
+   "peak_force_n": 5.246,
+   "gentleness": 0.344
+  },
+  {
+   "seed": 35,
+   "grip": 0.812,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0009,
+   "final_lift_m": -0.008,
+   "peak_force_n": 3.283,
+   "gentleness": 0.59
+  },
+  {
+   "seed": 36,
+   "grip": 0.861,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1292,
+   "final_lift_m": -0.008,
+   "peak_force_n": 18.355,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 37,
+   "grip": 0.167,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1113,
+   "final_lift_m": -0.008,
+   "peak_force_n": 4.417,
+   "gentleness": 0.448
+  },
+  {
+   "seed": 38,
+   "grip": 0.194,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1129,
+   "final_lift_m": -0.0053,
+   "peak_force_n": 2.814,
+   "gentleness": 0.648
+  },
+  {
+   "seed": 39,
+   "grip": 0.571,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1239,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 11.787,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 40,
+   "grip": 0.32,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1182,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 5.244,
+   "gentleness": 0.344
+  },
+  {
+   "seed": 41,
+   "grip": 0.602,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1241,
+   "final_lift_m": -0.0076,
+   "peak_force_n": 9.746,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 42,
+   "grip": 0.177,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.001,
+   "final_lift_m": -0.008,
+   "peak_force_n": 2.502,
+   "gentleness": 0.687
+  },
+  {
+   "seed": 43,
+   "grip": 0.395,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1195,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 8.64,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 44,
+   "grip": 0.915,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0009,
+   "final_lift_m": -0.008,
+   "peak_force_n": 4.681,
+   "gentleness": 0.415
+  },
+  {
+   "seed": 45,
+   "grip": 0.634,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1259,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 11.801,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 46,
+   "grip": 0.711,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1284,
+   "final_lift_m": -0.008,
+   "peak_force_n": 12.834,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 47,
+   "grip": 0.579,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1258,
+   "final_lift_m": -0.008,
+   "peak_force_n": 10.749,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 48,
+   "grip": 0.183,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1134,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 4.459,
+   "gentleness": 0.443
+  },
+  {
+   "seed": 49,
+   "grip": 0.603,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1257,
+   "final_lift_m": -0.0077,
+   "peak_force_n": 10.796,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 50,
+   "grip": 0.382,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0008,
+   "final_lift_m": -0.008,
+   "peak_force_n": 3.469,
+   "gentleness": 0.566
+  },
+  {
+   "seed": 51,
+   "grip": 0.423,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1218,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 8.379,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 52,
+   "grip": 0.799,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1295,
+   "final_lift_m": -0.008,
+   "peak_force_n": 14.207,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 53,
+   "grip": 0.417,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1203,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 7.159,
+   "gentleness": 0.105
+  },
+  {
+   "seed": 54,
+   "grip": 0.744,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1276,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 13.291,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 55,
+   "grip": 0.982,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1282,
+   "final_lift_m": -0.008,
+   "peak_force_n": 15.12,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 56,
+   "grip": 0.504,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1241,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 10.14,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 57,
+   "grip": 0.702,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1274,
+   "final_lift_m": -0.008,
+   "peak_force_n": 13.987,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 58,
+   "grip": 0.391,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1213,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 7.143,
+   "gentleness": 0.107
+  },
+  {
+   "seed": 59,
+   "grip": 0.586,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1252,
+   "final_lift_m": -0.008,
+   "peak_force_n": 10.667,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 60,
+   "grip": 0.897,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1288,
+   "final_lift_m": -0.008,
+   "peak_force_n": 15.309,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 61,
+   "grip": 0.826,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0009,
+   "final_lift_m": -0.008,
+   "peak_force_n": 3.023,
+   "gentleness": 0.622
+  },
+  {
+   "seed": 62,
+   "grip": 0.171,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1145,
+   "final_lift_m": -0.0077,
+   "peak_force_n": 3.952,
+   "gentleness": 0.506
+  },
+  {
+   "seed": 63,
+   "grip": 0.127,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.112,
+   "final_lift_m": -0.0011,
+   "peak_force_n": 2.621,
+   "gentleness": 0.672
+  },
+  {
+   "seed": 64,
+   "grip": 0.564,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1236,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 11.328,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 65,
+   "grip": 0.328,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1195,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 5.681,
+   "gentleness": 0.29
+  },
+  {
+   "seed": 66,
+   "grip": 0.944,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0008,
+   "final_lift_m": -0.008,
+   "peak_force_n": 4.778,
+   "gentleness": 0.403
+  },
+  {
+   "seed": 67,
+   "grip": 0.883,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.129,
+   "final_lift_m": -0.008,
+   "peak_force_n": 17.838,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 68,
+   "grip": 0.012,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1077,
+   "final_lift_m": -0.0077,
+   "peak_force_n": 3.791,
+   "gentleness": 0.526
+  },
+  {
+   "seed": 69,
+   "grip": 0.074,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1117,
+   "final_lift_m": -0.0012,
+   "peak_force_n": 3.608,
+   "gentleness": 0.549
+  },
+  {
+   "seed": 70,
+   "grip": 0.924,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1321,
+   "final_lift_m": -0.008,
+   "peak_force_n": 17.088,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 71,
+   "grip": 0.313,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1168,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 5.648,
+   "gentleness": 0.294
+  },
+  {
+   "seed": 72,
+   "grip": 0.822,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1287,
+   "final_lift_m": -0.008,
+   "peak_force_n": 13.12,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 73,
+   "grip": 0.018,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1082,
+   "final_lift_m": -0.003,
+   "peak_force_n": 4.988,
+   "gentleness": 0.377
+  },
+  {
+   "seed": 74,
+   "grip": 0.452,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1234,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 8.447,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 75,
+   "grip": 0.726,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1271,
+   "final_lift_m": -0.008,
+   "peak_force_n": 12.634,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 76,
+   "grip": 0.041,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1106,
+   "final_lift_m": -0.0077,
+   "peak_force_n": 4.052,
+   "gentleness": 0.493
+  },
+  {
+   "seed": 77,
+   "grip": 0.822,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1303,
+   "final_lift_m": -0.008,
+   "peak_force_n": 15.658,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 78,
+   "grip": 0.837,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1308,
+   "final_lift_m": -0.008,
+   "peak_force_n": 15.362,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 79,
+   "grip": 0.179,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1135,
+   "final_lift_m": -0.0074,
+   "peak_force_n": 3.72,
+   "gentleness": 0.535
+  },
+  {
+   "seed": 80,
+   "grip": 0.202,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.001,
+   "final_lift_m": -0.008,
+   "peak_force_n": 1.877,
+   "gentleness": 0.765
+  },
+  {
+   "seed": 81,
+   "grip": 0.991,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1307,
+   "final_lift_m": -0.008,
+   "peak_force_n": 22.243,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 82,
+   "grip": 0.958,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.0445,
+   "final_lift_m": -0.008,
+   "peak_force_n": 17.621,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 83,
+   "grip": 0.837,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1288,
+   "final_lift_m": -0.008,
+   "peak_force_n": 15.803,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 84,
+   "grip": 0.528,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1239,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 9.371,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 85,
+   "grip": 0.536,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1222,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 9.389,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 86,
+   "grip": 0.414,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1206,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 8.826,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 87,
+   "grip": 0.52,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1213,
+   "final_lift_m": -0.0075,
+   "peak_force_n": 8.107,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 88,
+   "grip": 0.696,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1259,
+   "final_lift_m": -0.008,
+   "peak_force_n": 12.431,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 89,
+   "grip": 0.841,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1298,
+   "final_lift_m": -0.008,
+   "peak_force_n": 16.631,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 90,
+   "grip": 0.712,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1257,
+   "final_lift_m": -0.008,
+   "peak_force_n": 13.328,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 91,
+   "grip": 0.563,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1234,
+   "final_lift_m": -0.0075,
+   "peak_force_n": 9.046,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 92,
+   "grip": 0.895,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.129,
+   "final_lift_m": -0.008,
+   "peak_force_n": 16.872,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 93,
+   "grip": 0.607,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1248,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 11.04,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 94,
+   "grip": 0.217,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1158,
+   "final_lift_m": -0.0075,
+   "peak_force_n": 3.699,
+   "gentleness": 0.538
+  },
+  {
+   "seed": 95,
+   "grip": 0.773,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1278,
+   "final_lift_m": -0.008,
+   "peak_force_n": 13.737,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 96,
+   "grip": 0.361,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1201,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 5.698,
+   "gentleness": 0.288
+  },
+  {
+   "seed": 97,
+   "grip": 0.676,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1279,
+   "final_lift_m": -0.008,
+   "peak_force_n": 10.937,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 98,
+   "grip": 0.34,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1184,
+   "final_lift_m": -0.0077,
+   "peak_force_n": 6.714,
+   "gentleness": 0.161
+  },
+  {
+   "seed": 99,
+   "grip": 0.383,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.121,
+   "final_lift_m": -0.0079,
+   "peak_force_n": 8.552,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 100,
+   "grip": 0.081,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1094,
+   "final_lift_m": -0.0074,
+   "peak_force_n": 4.743,
+   "gentleness": 0.407
+  },
+  {
+   "seed": 101,
+   "grip": 0.483,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1207,
+   "final_lift_m": -0.008,
+   "peak_force_n": 10.795,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 102,
+   "grip": 0.604,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.125,
+   "final_lift_m": -0.008,
+   "peak_force_n": 11.901,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 103,
+   "grip": 0.934,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1315,
+   "final_lift_m": -0.008,
+   "peak_force_n": 17.864,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 104,
+   "grip": 0.296,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.001,
+   "final_lift_m": -0.008,
+   "peak_force_n": 2.564,
+   "gentleness": 0.679
+  },
+  {
+   "seed": 105,
+   "grip": 0.762,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1287,
+   "final_lift_m": -0.008,
+   "peak_force_n": 12.785,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 106,
+   "grip": 1.0,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1311,
+   "final_lift_m": -0.008,
+   "peak_force_n": 22.061,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 107,
+   "grip": 0.199,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1154,
+   "final_lift_m": -0.0074,
+   "peak_force_n": 3.542,
+   "gentleness": 0.557
+  },
+  {
+   "seed": 108,
+   "grip": 0.868,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1305,
+   "final_lift_m": -0.008,
+   "peak_force_n": 13.414,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 109,
+   "grip": 0.147,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1136,
+   "final_lift_m": -0.0075,
+   "peak_force_n": 4.216,
+   "gentleness": 0.473
+  },
+  {
+   "seed": 110,
+   "grip": 0.448,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1205,
+   "final_lift_m": -0.0073,
+   "peak_force_n": 6.98,
+   "gentleness": 0.127
+  },
+  {
+   "seed": 111,
+   "grip": 0.265,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1171,
+   "final_lift_m": -0.0076,
+   "peak_force_n": 5.793,
+   "gentleness": 0.276
+  },
+  {
+   "seed": 112,
+   "grip": 0.628,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.123,
+   "final_lift_m": -0.008,
+   "peak_force_n": 10.497,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 113,
+   "grip": 0.076,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1108,
+   "final_lift_m": -0.0072,
+   "peak_force_n": 4.064,
+   "gentleness": 0.492
+  },
+  {
+   "seed": 114,
+   "grip": 0.375,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1198,
+   "final_lift_m": -0.0078,
+   "peak_force_n": 6.299,
+   "gentleness": 0.213
+  },
+  {
+   "seed": 115,
+   "grip": 0.282,
+   "outcome": "lifted",
+   "success": true,
+   "max_lift_m": 0.1174,
+   "final_lift_m": -0.0077,
+   "peak_force_n": 4.998,
+   "gentleness": 0.375
+  },
+  {
+   "seed": 116,
+   "grip": 0.664,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1248,
+   "final_lift_m": -0.008,
+   "peak_force_n": 12.408,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 117,
+   "grip": 0.796,
+   "outcome": "not_lifted",
+   "success": false,
+   "max_lift_m": -0.0007,
+   "final_lift_m": -0.008,
+   "peak_force_n": 2.835,
+   "gentleness": 0.646
+  },
+  {
+   "seed": 118,
+   "grip": 0.928,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1323,
+   "final_lift_m": -0.008,
+   "peak_force_n": 18.282,
+   "gentleness": 0.0
+  },
+  {
+   "seed": 119,
+   "grip": 0.485,
+   "outcome": "crushed",
+   "success": false,
+   "max_lift_m": 0.1239,
+   "final_lift_m": -0.008,
+   "peak_force_n": 9.982,
+   "gentleness": 0.0
+  }
+ ]
+}

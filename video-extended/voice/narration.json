@@ -1,0 +1,107 @@
+[
+ {
+  "scene": 1,
+  "title": "Hook",
+  "about_s": 12,
+  "words": 29,
+  "text": "Robots learn to grasp from human demonstrations. But through a teleoperation glove, you feel nothing. So many demos end as drops and crushes, and someone sorts them by hand."
+ },
+ {
+  "scene": 2,
+  "title": "What it is",
+  "about_s": 14,
+  "words": 36,
+  "text": "Egg Shell: a Rokoko glove stream drives a Shadow robot hand in MuJoCo, with an egg that can crack. The glove input here is simulated: a scripted operator, through the same pipeline as real glove data."
+ },
+ {
+  "scene": 3,
+  "title": "The wire path",
+  "about_s": 17,
+  "words": 46,
+  "text": "Here is the wire path. Rokoko's hand solver serves RGMP version two on TCP port twelve two seven seven. Type one messages define the stream. Type two carry twenty-six OpenXR joints, each a position and a rotation. Our client reads them directly, with no ROS install."
+ },
+ {
+  "scene": 4,
+  "title": "Retargeting",
+  "about_s": 23,
+  "words": 61,
+  "text": "Then retargeting. Frames turn Z-up, and a yaw calibration points the fingers forward. Each angle comes from a bone relative to its parent, so hand position does not change it. A flat hand, held for five seconds, sets each person's zero, and a filter smooths the noise. Twenty-one human angles become twenty Shadow actuators, six Inspire values and a wrist target."
+ },
+ {
+  "scene": 5,
+  "title": "A clean lift",
+  "about_s": 9,
+  "words": 21,
+  "text": "A careful try. The hand lifts the egg eleven centimetres, at a peak grip force of three point seven six newtons."
+ },
+ {
+  "scene": 6,
+  "title": "The crush",
+  "about_s": 12,
+  "words": 30,
+  "text": "Now a squeeze. Force reaches nineteen point six newtons, past the crack threshold of eight, and the egg turns red. That threshold is a simulation proxy, not a measured egg."
+ },
+ {
+  "scene": 7,
+  "title": "Every try is an episode",
+  "about_s": 11,
+  "words": 22,
+  "text": "Every try is saved as a training episode, with grip force per frame and a simulator label. Lifted. Crushed. Lifted. Not lifted."
+ },
+ {
+  "scene": 8,
+  "title": "Inside an episode",
+  "about_s": 17,
+  "words": 41,
+  "text": "Each episode file holds ten arrays, one row per step: time, raw glove frames, human angles, actions, wrist target, Inspire commands, joint positions, hand pose, egg pose and egg force. The actions and the wrist target are enough to replay it."
+ },
+ {
+  "scene": 9,
+  "title": "Thresholds miss things",
+  "about_s": 25,
+  "words": 65,
+  "text": "But thresholds miss things. The third egg rose ten point nine centimetres, so the simulator says lifted. Then the hand opened in the air. NVIDIA Nemotron reviews each episode from keyframes and the force log. Verdict: dropped, confidence zero point nine eight. Grip force hit zero with the egg three point four centimetres up. The episode is flagged for a human. The simulator label stays."
+ },
+ {
+  "scene": 10,
+  "title": "How the review works",
+  "about_s": 34,
+  "words": 89,
+  "text": "The review step by step. Nemotron gets four keyframes, from first contact to the end, and a twenty-four row force and lift timeline. It must answer in strict JSON, citing a frame or the log for each claim. A bad schema gets one repair request. A grounding check compares its numbers with the log. Then the cross-check with the simulator. One bug we hit: with a twelve-hundred-token budget, the model spent it all reasoning and replied empty. Now it gets four thousand ninety-six, and empty replies are never cached."
+ },
+ {
+  "scene": 11,
+  "title": "Proof",
+  "about_s": 14,
+  "words": 39,
+  "text": "Nemotron agrees on three of four, and four episodes is a smoke test, not an accuracy figure. Fifty-two tests pass. Our client speaks Rokoko's RGMP wire format, and round-trips joint angles. Replay gives the same label, four of four."
+ },
+ {
+  "scene": 12,
+  "title": "Verified, and not yet",
+  "about_s": 21,
+  "words": 52,
+  "text": "What is verified, and what is not. Verified with no gloves: the wire format against Rokoko's bridge code, the angle maths, the MuJoCo hand, labels and replay. Still needs hardware: real Smartglove data, the ROS 2 path, the live viewer, and a real Inspire hand. And the crack threshold stays a proxy."
+ },
+ {
+  "scene": 13,
+  "title": "Programming a policy in weight space",
+  "about_s": 40,
+  "words": 88,
+  "text": "The labels make the data trainable. We trained a small policy on four hundred eighty scripted demonstrations, then fine-tuned one copy on the lifted ones and one on the crushed ones. The difference in weights is a task vector. Add the lifted vector, with no new training, and success on unseen eggs goes from twenty-seven to sixty-seven percent, while crushes fall from sixty-two to twenty-eight. Add the crushed vector, and crushes rise to eighty-three. Not everything works: subtracting the crushed vector breaks the reach. Scripted demonstrations, simulated egg."
+ },
+ {
+  "scene": 14,
+  "title": "Next",
+  "about_s": 10,
+  "words": 24,
+  "text": "Next: real Rokoko gloves at the venue, Inspire hand commands sent to a real hand, and a behaviour-cloning policy trained on clean episodes only."
+ },
+ {
+  "scene": 15,
+  "title": "Close",
+  "about_s": 4,
+  "words": 8,
+  "text": "Egg Shell. The robot feels what you can't."
+ }
+]

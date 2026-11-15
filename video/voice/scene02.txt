@@ -1,0 +1,1 @@
+Egg Shell: a Rokoko glove stream drives a Shadow robot hand in MuJoCo, with an egg that can crack. The glove input here is simulated: a scripted operator, through the same pipeline as real glove data.

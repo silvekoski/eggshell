@@ -1,0 +1,76 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #s03-stage .bx { position: absolute; height: 120px; padding: 16px 22px; display: flex; flex-direction: column; justify-content: center; gap: 6px; }
+    #s03-stage .bx .nt { font-family: var(--mono); font-size: 30px; font-weight: 600; }
+    #s03-stage .bx .ns { font-size: 24px; color: var(--grey); }
+    #s03-sdk { left: 120px; top: 130px; width: 416px; border: 3px dashed rgba(255,255,255,0.5) !important; }
+    #s03-sdk .nt { color: var(--grey); }
+    #s03-fake { left: 120px; top: 280px; width: 416px; border: 3px solid #FFF !important; background: #0B0B0A !important; }
+    #s03-cli { left: 1000px; top: 205px; width: 380px; }
+    #s03-hf { left: 1440px; top: 205px; width: 384px; }
+    #s03-tcp { left: 600px; top: 226px; font-family: var(--mono); font-size: 28px; color: var(--ink); }
+    #s03-svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    #s03-bar { left: 120px; top: 470px; display: flex; gap: 0; }
+    #s03-bar div { height: 64px; border: 2px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 28px; }
+    #s03-stage .row { position: absolute; left: 120px; width: 1680px; display: flex; align-items: flex-start; gap: 24px; }
+    #s03-stage .row .no { width: 64px; height: 64px; border-radius: 10px; background: #0B0B0A; border: 2px solid rgba(255,255,255,0.4); font-family: var(--mono); font-weight: 600; font-size: 32px; display: flex; align-items: center; justify-content: center; flex: none; }
+    #s03-stage .row .ti { width: 280px; font-size: 44px; font-weight: 600; flex: none; padding-top: 6px; }
+    #s03-stage .row .de { font-family: var(--mono); font-size: 32px; line-height: 1.45; padding-top: 8px; color: var(--ink); }
+    #s03-xyz { color: var(--amber); }
+    #s03-yup { font-size: 28px; padding: 2px 12px; margin-left: 12px; }
+    #s03-noros { left: 1000px; top: 345px; font-size: 28px; padding: 6px 14px; }
+    #s03-rt { left: 1440px; top: 345px; font-size: 28px; padding: 6px 14px; }
+  </style>
+  <div id="root" data-composition-id="s03" data-width="1920" data-height="1080">
+    <div class="stage" id="s03-stage">
+      <div class="chapter">The wire path</div>
+      <div class="simchip" id="s03-sim">glove input: simulated</div>
+      <svg id="s03-svg" viewBox="0 0 1920 1080"></svg>
+      <div class="panel bx" id="s03-sdk"><div class="nt">rkk-hand-solver</div><div class="ns">Rokoko SDK · not here</div></div>
+      <div class="panel bx" id="s03-fake"><div class="nt">teleop fake-solver</div><div class="ns">scripted operator · used here</div></div>
+      <div class="abs" id="s03-tcp">RGMP v2 · TCP :12277</div>
+      <div class="panel bx" id="s03-cli"><div class="nt">RgmpSource</div><div class="ns">our client, rgmp.py</div></div>
+      <div class="panel bx" id="s03-hf"><div class="nt">HandFrame</div><div class="ns">26 OpenXR joint poses</div></div>
+      <div class="abs chip grey" id="s03-noros">no ROS install needed</div>
+      <div class="abs chip green" id="s03-rt">round trip within 1e-4 rad</div>
+      <div class="abs" id="s03-bar"><div style="width: 220px">u32 type</div><div style="width: 220px">u32 length</div><div style="width: 760px; border-color: #FFF">payload</div></div>
+      <div class="row" id="s03-r1" style="top: 568px"><div class="no">1</div><div class="ti">definition</div><div class="de">JSON · device_type: solved_hand · joints_openxr: 26 streams</div></div>
+      <div class="row" id="s03-r2" style="top: 660px"><div class="no">2</div><div class="ti">data</div><div class="de">&lt;IIQ device_id, group_id, timestamp_us<br />then 26 × &lt;7f <span id="s03-xyz">x y z qx qy qz qw</span><span class="chip grey" id="s03-yup">Y-up</span></div></div>
+      <div class="row" id="s03-r3" style="top: 800px"><div class="no">3</div><div class="ti">disconnect</div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const V = window.VID, S = "s03";
+      const $ = (id) => document.getElementById(id);
+      const tl = gsap.timeline({ paused: true });
+      V.sceneEnvelope(tl, "#s03-stage", S);
+      V.header(document.querySelector("#s03-stage"), tl);
+      const svg = $("s03-svg");
+      const line = (pts, t, dashed) => {
+        const p = V.svg("path", { d: V.path(pts), fill: "none", stroke: dashed ? "#9A9A9A" : "#FFFFFF", "stroke-width": 3, "stroke-dasharray": dashed ? "8 8" : "none" }, svg);
+        if (dashed) tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.4 }, t); else V.draw(tl, p, t, 0.5, "none");
+      };
+      V.enter(tl, "#s03-sim", 0.2);
+      V.enter(tl, "#s03-sdk", 0.25);
+      V.enter(tl, "#s03-fake", 0.6);
+      const tT = V.t(S, "RGMP version two");
+      line([[536, 190], [580, 190], [580, 265], [996, 265]], tT, true);
+      line([[536, 340], [580, 340], [580, 265], [996, 265]], tT);
+      tl.fromTo("#s03-tcp", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, tT);
+      V.enter(tl, "#s03-cli", V.t(S, "TCP port"));
+      line([[1380, 265], [1436, 265]], V.t(S, "TCP port") + 0.4);
+      V.enter(tl, "#s03-hf", V.t(S, "TCP port") + 0.6);
+      V.enter(tl, "#s03-bar", V.t(S, "Type one") - 0.4);
+      V.enter(tl, "#s03-r1", V.t(S, "Type one"));
+      V.enter(tl, "#s03-r2", V.t(S, "Type two carry"));
+      tl.fromTo("#s03-xyz", { color: "#FFFFFF" }, { color: "#FFFFFF", duration: 0.4 }, V.t(S, "each a position"));
+      V.enter(tl, "#s03-r3", V.t(S, "rotation", 0, "e") + 0.2);
+      tl.to("#s03-cli", { boxShadow: "0 0 0 4px rgba(255,255,255,0.6)", duration: 0.4 }, V.t(S, "Our client reads"));
+      V.enter(tl, "#s03-noros", V.t(S, "no ROS install"));
+      V.enter(tl, "#s03-rt", V.t(S, "no ROS install") + 0.4);
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

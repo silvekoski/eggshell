@@ -1,0 +1,1 @@
+Egg Shell gives the robot the sense you lack. A glove stream drives a twenty-actuator Shadow hand in MuJoCo, holding an egg that can crack. One honest note: we had no Rokoko gloves, so all glove input here is simulated, by a scripted operator.
